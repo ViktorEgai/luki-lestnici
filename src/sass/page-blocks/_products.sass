@@ -1,0 +1,56 @@
+.products
+  padding: 30px 0
+  &__title
+    margin-bottom: 1em
+  &-item
+    position: relative
+    @include font(14px, 128%,500)
+    letter-spacing: -0.28px
+
+  &-item__sale
+    position: absolute
+    top: 15px
+    left: 20px
+    color: #fff
+    background-color: $main-color
+    border-radius: 8px
+    padding: 7px 12px
+  &-item__favorite
+    position: absolute
+    top: 15px
+    right: 20px
+    z-index: 2
+    width: 32px
+    height: 32px
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: #fff
+    border-radius: 50%
+
+  &-item__thumb
+    border-radius: 8px
+    background-color: $sec-body-bg-color
+    padding-top: 40px
+    margin-bottom: 15px
+    img
+      aspect-ratio: 280/264
+      width: 100%
+      object-fit: cover
+  &-item__title
+    display: block
+    margin-bottom: 1.1em
+  &-item__price
+    color: #000
+    @include font(18px,100%,500)
+    letter-spacing: -0.36px
+    display: flex
+    gap: 9px
+    span
+      color: $primary-text-color
+      text-decoration: line-through
+      font-size: 12px
+  &__btn
+
+    max-width: 200px
+    margin: 20px auto 0

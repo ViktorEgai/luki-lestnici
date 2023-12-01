@@ -1,0 +1,9 @@
+.--svg__quote,.--svg__quote-before::before,.--svg__quote-after::after{
+    background-image: url("data:image/svg+xml;charset=utf8, %3Csvg width='36' height='25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.494.061h10.852v11.284c0 4.765-.904 8.168-2.713 10.206-1.78 2.039-4.78 3.101-9 3.187l-.56-5.9c2.325 0 3.904-.488 4.737-1.464.861-.948 1.292-2.785 1.292-5.513V11H1.494V.061Zm22.87 0h10.852v11.284c0 4.765-.904 8.168-2.713 10.206-1.78 2.039-4.78 3.101-9 3.187l-.56-5.9c2.325 0 3.904-.488 4.737-1.464.861-.948 1.292-2.785 1.292-5.513V11h-4.609V.061Z' fill='%23FE0000'/%3E%3C/svg%3E");
+}
+.--svg__quote-before::before {
+    content:'';
+}
+.--svg__quote-after::after {
+    content:'';
+}

@@ -1,0 +1,105 @@
+.footer
+  background-color: #1a1a25
+  padding: 75px 0 70px
+  color: #858fa4
+  font-family: $sec-font
+  &-top
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    border-bottom: 1px solid rgba(133, 143, 164, 0.15)
+    padding-bottom: 28px
+  &-col
+    max-width: 260px
+  &-subscribe
+    border-radius: 5px
+    background: rgba(133, 143, 164, 0.15)
+
+    padding: 14px
+    margin-bottom: 50px
+  &-subscribe__field
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &-subscribe__input
+    color: #fff
+    border: none
+    font-size: 14px
+    background-color: transparent
+    &::placeholder
+      color: #858fa4
+  &__phone
+    margin-bottom: 8px
+  &__callback
+    font-size: 14px
+    color: #fff
+    margin-bottom: 50px
+    display: block
+  &__email
+    margin-bottom: 40px
+    a
+      color: #fff
+      font-size: 14px
+  &__email-text
+    margin-bottom: 8px
+
+  &-links
+    color: #4b7ee8
+    font-size: 14px
+
+  &-bottom
+    padding-top: 46px
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &__logo
+  &__social
+    margin-right: auto
+    margin-left: 9%
+
+    .social__item
+      svg
+        width: 24px
+        height: 24px
+        max-width: none
+        max-height: none
+      path
+        fill: rgba(144, 156, 181, 1)
+  &-payment
+    margin-left: 20px
+    display: flex
+    align-items: center
+    gap: 30px
+    &__item
+@media screen and ( max-width: 992px )
+  .footer
+    padding: 40px 0
+    &__logo
+      max-width: 140px
+    &-top
+      flex-direction: column
+      align-items: center
+      border: none
+    // &-col
+    //   display: flex
+    //   flex-wrap: wrap
+    //   width: 100%
+    //   max-width: 100%
+    &-bottom
+      padding-top: 0
+    &-subscribe, &__callback, &__email
+      margin-bottom: 24px
+    &-payment
+      gap: 16px
+
+@media screen and ( max-width: 440px )
+  .footer-col
+    max-width: 100%
+  .footer-bottom
+    flex-wrap: wrap
+    justify-content: space-between
+  .footer
+    &__social
+      margin: 0
+    &-payment
+      margin: 20px auto 0

@@ -1,0 +1,29 @@
+.slider
+  .slick-list
+    margin: 0 -1.5rem
+  .slick-arrow
+    position: absolute
+    top: 50%
+    z-index: 1
+    transform: translateY(-50%)
+  .next
+    right: -70px
+  .prev
+    left: -70px
+  &[data-slider-count="2"] img
+    aspect-ratio: 520/300
+@media screen and ( max-width: 576px )
+  .slider
+    max-width: 80%
+    margin: 0 auto
+
+    .slick-list
+      margin: 0
+    .slick-arrow
+      svg
+        width: 25px
+        height: 25px
+    .next
+      right: -40px
+    .prev
+      left: -40px

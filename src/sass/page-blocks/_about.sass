@@ -1,0 +1,53 @@
+.about
+  margin: 30px 0
+  padding: 60px 0
+  background-color: $sec-body-bg-color
+  &__info
+    display: flex
+    flex-direction: column
+    justify-content: center
+    height: 100%
+    max-width: 480px
+  &__title
+    margin-bottom: 0.6em
+  &__text
+    @include font(14px,128%,500)
+    letter-spacing: -0.28px
+    margin-bottom: 38px
+    p,ul,ol
+      margin-bottom: 1em
+  &__btn
+    max-width: 180px
+  &__right
+    position: relative
+  &-nums
+    position: absolute
+    top: 30%
+    left: -5%
+    display: flex
+    align-items: center
+    padding: 10px 25px
+    gap: 20px
+    background-color: #fff
+    border-radius: 5.564px
+  &-nums__item
+    max-width: 70px
+  &-nums__item-num
+    @include font(24px,93%, 500)
+    letter-spacing: -0.48px
+    color: $main-color
+  &-nums__item-text
+    @include font(9.8px,128%,500  )
+    letter-spacing: -0.195px
+  &__image
+    img
+      aspect-ratio: 460/505
+      object-fit: cover
+      margin-left: auto
+@media screen and ( max-width: 992px )
+  .about
+    &__image img
+      max-width: 300px
+    &-nums
+      top: auto
+      bottom: 0

@@ -1,0 +1,57 @@
+.header-mobile-menu
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  max-width: clamp(220px, 35%, 400px)
+  height: 100vh
+  z-index: 19
+  background-color: $main-color
+  opacity: 0
+  visibility: hidden
+  transform: translateX(-100%)
+  overflow: hidden
+  transition: .6s
+  padding: 50px 12px 35px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  align-items: flex-start
+  &.active
+    transform: translateX(0)
+
+    opacity: 1
+    visibility: visible
+  &__wrapper
+    @include flex(column, flex-start,flex-start)
+    padding: 50px 30px
+  &__bottom
+    margin-top: auto
+    width: 100%
+  &__address
+    font-size: 12px
+  &-social
+    justify-content: flex-start
+    margin-bottom: 20px
+  .header__info-item
+    font-size: 12px
+    margin-bottom: 10px
+    display: block
+  .header__btn
+    margin: 20px 0
+    max-width: 150px
+    font-size: 14px
+    padding: 12px
+  &__close
+    position: absolute
+    top: 16px
+    left: 16px
+@media screen and ( max-height: 500px )
+  .header-mobile-menu
+    max-width: 100%
+    width: 100vw
+    flex-direction: row
+    justify-content: space-between
+    gap: 50px
+    &__bottom
+      margin: 30px 0 0

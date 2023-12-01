@@ -1,0 +1,16 @@
+.section-text
+  text-align: right
+  @include font (18px, 133%)
+  letter-spacing: 1.8px
+  max-width: 340px
+  margin-left: auto
+  margin-top: 5px
+@media screen and ( max-width: 992px )
+  .section-text
+    text-align: left
+    max-width: none
+    margin-top: 20px
+@media screen and ( max-width: 576px )
+  .section-text
+    font-size: 14px
+    letter-spacing: normal

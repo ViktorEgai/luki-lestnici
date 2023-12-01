@@ -1,0 +1,41 @@
+.header-menu-btn
+  width: 24px
+  height: 24px
+  display: none
+
+  // position: relative
+  // z-index: 20
+  margin-right: 7px
+  border-radius: 50%
+  transition: .3s
+
+  svg
+    width: 24px
+    height: 24px
+    transition: .3s
+    display: flex
+    align-items: center
+    justify-content: center
+
+    rect
+      transition: .3s
+
+  &.active
+    background-color: #97C7C7
+    svg
+      transform: rotate(360deg) scale(.8)
+    rect
+
+      &:nth-child(1)
+        // transform-origin: left top
+        transform: translate(5px,-2px) rotate(45deg)
+      &:nth-child(2)
+        opacity: 0
+      &:nth-child(3)
+        // transform-origin: right bottom
+        transform: translate(-8px,6px) rotate(-45deg)
+@media screen and ( max-width: 1200px )
+  .header-menu-btn
+    display: flex
+    align-items: center
+    justify-content: center

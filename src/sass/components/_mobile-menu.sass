@@ -1,0 +1,27 @@
+.mobile-menu
+  display: none
+  height: 100%
+  width: 100%
+
+  background-color: #fff
+
+  padding: 100px 0px
+  &__logo
+    position: absolute
+    top: 30px
+    left: 30px
+  .fancybox-button
+    width: 30px
+    height: 30px
+    padding: 0
+    right: 30px
+    top: 30px
+    svg
+      width: 30px
+      height: 30px
+@media screen and ( max-width: 440px )
+  .mobile-menu
+    &__logo
+      left: calc(1.5rem*.5)
+    .fancybox-button
+      right: calc(1.5rem*.5)

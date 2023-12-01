@@ -1,0 +1,40 @@
+.footer
+
+  &-menu
+    display: flex
+    gap: 48px
+  &-menu__item
+    min-width: 105px
+    & > a
+      color: #fff
+
+  &-submenu
+    margin-top: 30px
+    .footer-menu__item
+      &:not(:last-child)
+        margin-bottom: 12px
+    a
+      color: #858fa4
+@media screen and ( min-width: 992px )
+  .footer-menu__item a:hover
+    color: #fff
+@media screen and ( max-width: 1200px )
+  .footer-menu
+    gap: 24px
+    &__item
+      min-width: 90px
+@media screen and ( max-width: 992px )
+  .footer-menu
+    justify-content: space-between
+    width: 100%
+    margin-bottom: 40px
+@media screen and ( max-width: 768px )
+
+  .footer-menu
+    flex-wrap: wrap
+    gap: 40px 0
+    font-size: 14px
+    & > .footer-menu__item
+      width: 50%
+  .footer-submenu
+    margin-top: 24px

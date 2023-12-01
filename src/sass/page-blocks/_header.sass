@@ -1,0 +1,153 @@
+.header
+  @include font(14px, 178%, 500)
+
+  &-top
+    background-color: #000
+    color: rgba(255,255,255,.7)
+    letter-spacing: -0.28px
+    padding: 12px 0
+  &-top-wrapper
+    display: flex
+    align-items: center
+    justify-content: space-between
+  &-top__address
+  &-top__info
+    display: flex
+    align-items: center
+  &-top__info-item
+    display: flex
+    align-items: center
+    gap: 5px
+    padding: 0 20px
+    position: relative
+    &:not(:last-child)::after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 0
+      transform: translateY(-50%)
+      height: 17px
+      width: 1px
+      background-color: #c4c4c4
+
+    &.social
+      gap: 6px
+      padding-right: 0
+    .social__item
+      height: 17px
+      width: 17px
+
+  &-center
+    padding: 26px 0 18px
+  &-center-wrapper
+    display: flex
+    align-items: center
+
+  &-center__logo
+    margin-right: 30px
+  &-center__catalog
+    background-color: $main-color
+    padding: 17px 22px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 8px
+    color: #fff
+    gap: 10px
+    font-weight: 500
+    margin-right: 20px
+  &-center__search
+    border-radius: 8px
+    background-color: $main-color
+    display: flex
+    align-items: center
+    padding: 3px
+    max-width: 680px
+    width: 100%
+    margin: 0 auto
+    input
+      padding: 12.5px 15px
+      border-radius: 6px
+      background: #fff
+      border: none
+      flex: 1 1 auto
+    button
+      padding: 0 21px
+      display: flex
+      align-items: center
+      justify-content: center
+  &-center-buttons
+    display: flex
+    align-items: center
+    gap: 22px
+    margin-left: auto
+  &-center-buttons__item
+    position: relative
+    display: block
+    height: 24px
+    width: 24px
+    span
+      position: absolute
+      top: 0
+      right: -6px
+      background-color: $main-color
+      color: #fff
+      font-size: 8px
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 12px
+      height: 12px
+      border-radius: 50%
+  &-nav
+    padding-bottom: 26px
+@media screen and ( max-width: 1200px )
+  .header
+    &-top__address
+      max-width: 260px
+      line-height: 150%
+
+    &-center__search
+      max-width: 400px
+@media screen and ( max-width: 992px )
+  .header-top
+    font-size: 12px
+    line-height: 100%
+    padding: 6px 0
+    &-wrapper
+      gap: 10px
+
+    &__info
+      flex-direction: column
+      align-items: flex-end
+      justify-content: center
+      flex-wrap: wrap
+      height: 45px
+      width: 100%
+      max-width: 260px
+      gap: 8px
+      &-item
+        padding: 0
+        // margin-bottom: 6px
+        &::after
+          display: none
+  .header-center
+    &__catalog
+      padding: 8px 18px
+    &__search
+      max-width: 100%
+@media screen and ( max-width: 440px )
+  .header-top
+    font-size: 8px
+
+    &__address
+      max-width: 120px
+    &__info
+      gap: 4px
+  .header-center-buttons
+    gap: 12px
+  .header-center__logo
+    margin-right: 18px
+  .header-center__catalog
+    padding: 5px 10px
+    font-size: 12px
