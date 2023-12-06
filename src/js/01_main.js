@@ -77,6 +77,29 @@ const nextButton = `<button class="prev"><svg width="11" height="18" viewBox="0 
 				}
 			}]
 		});
+	$(".about-objects-slider").slick({
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			variableWidth: true,
+			dots: false,
+			arrows: true,
+			fade: false,
+			infinite: true,
+			autoplay: false,
+			autoplaySpeed: 3000,
+			speed: 1500,
+			nextArrow: prevButton,
+			prevArrow: nextButton,
+			responsive: [ {
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					variableWidth: false,
+
+				}
+			}]
+		});
 
 	
 	function anchorScroll() {
@@ -92,6 +115,36 @@ const nextButton = `<button class="prev"><svg width="11" height="18" viewBox="0 
 		});
 	}
 	anchorScroll();
+
+	$('.about-nav__item a').eq(0).addClass('active')
+	$('.about-nav__item a').on('click', function() {
+		$('.about-nav__item a').removeClass('active')
+		$(this).addClass('active');
+	});
+
+
+	$('.catalog-sidebar-list__item a .arrow').on('click', function() {
+		$(this).parent().toggleClass('active');
+		$(this).parent().next().slideToggle();
+	})
+
+
+
+	$('.sort-btn').on('click', function() {
+		$('.catalog-filter-list').toggle(400)
+	})
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// Input mask
 	$("input[type=tel]").inputmask("+7(999)-999-99-99");

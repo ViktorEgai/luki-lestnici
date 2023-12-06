@@ -1,0 +1,144 @@
+.catalog
+  padding-bottom: 40px
+  &__title
+    margin-bottom: 1em
+  &-sidebar
+    border-radius: 8px
+    background-color: $sec-body-bg-color
+    padding: 36px 30px
+  &-sidebar-block
+  &-sidebar-block__title
+    color: $ter-body-bg-color
+    @include font(18px,130%,700)
+    margin-bottom: 1.3em
+  &-sidebar-list
+  &-sidebar-list__item
+    padding: 24px 0
+    *
+      transition: .3s
+    a
+      display: flex
+      align-items: center
+      justify-content: space-between
+    & > a
+      color: $ter-body-bg-color
+      &.active
+        color: $main-color
+        .arrow
+          transform: rotate(90deg)
+          path
+            stroke: $main-color
+    .arrow
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 20px
+      height: 20px
+  &-sidebar-sublist
+    margin-top: 24px
+    transition: none !important
+    display: none
+  &-sidebar-sublist__item
+    color: rgba(26, 26, 37, 0.50)
+    @include font (14px, 110%,500)
+    a
+      margin-bottom: 1em
+
+  &-sidebar-sublist__item-title
+    color: $ter-body-bg-color
+    margin-bottom: 1em
+  &-cat-block
+    padding: 33px 0 25px
+    &:first-child
+      padding-top: 0
+    &:not(:last-child)
+      border-bottom: 1px solid #D9D9D9
+
+  &-cat-block-title
+    margin-bottom: 1em
+  &-cat-item
+    border-radius: 8px
+    background-color: $sec-body-bg-color
+    display: block
+    height: 100%
+  &-cat-item__info
+    padding: 32px 0 20px 30px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 100%
+  &-cat-item__title
+    color: $ter-body-bg-color
+    @include font(16px, 110%, 500)
+  &-cat-item__count
+    color: #c9c9c9
+    @include text
+  &-cat-item__image
+    padding-top: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    img
+      max-width: 134px
+  &-body
+
+  &-body-top
+    margin-bottom: 20px
+  &-filter-list
+    display: flex
+    align-items: center
+    gap: 24px
+    a
+      display: flex
+      align-items: center
+      color: #384255
+      @include font(14px,140%,500)
+      opacity: 0.5
+    svg
+      display: none
+
+    a.active
+      color: $main-color
+      font-weight: 700
+      opacity: 1
+      svg
+        display: block
+
+  &-pagination
+    display: flex
+    align-items: center
+    justify-content: center
+    a
+      width: 30px
+      height: 30px
+      display: flex
+      align-items: center
+      justify-content: center
+      color: #909cb5
+      font-size: 14px
+      font-weight: 700
+      &.active
+        color: $main-color
+@media screen and ( max-width: 992px )
+  .catalog-body-top
+    position: relative
+  .catalog-filter-list
+    display: none
+    position: absolute
+    top: 100%
+    left: 0
+    flex-direction: column
+    align-items: flex-start
+    gap: 10px
+    z-index: 5
+    background-color: #fff
+    border-radius: 8px
+    min-width: 200px
+    border: 1px solid $sec-body-bg-color
+    svg
+      display: none !important
+  .catalog-cat
+    &-item__info
+      padding: 20px
+    &-item__title
+      font-size: 16px
