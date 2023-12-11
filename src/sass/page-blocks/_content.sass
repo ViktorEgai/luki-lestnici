@@ -1,0 +1,38 @@
+.content
+  @include font(18px, 150%, 400)
+
+  &-wrapper
+    padding: 45px 0 65px
+
+  &__title
+    margin-bottom: 1.25em
+  &-block
+  p,ul,ol, ol li
+    margin-bottom: 1em
+  ol ul
+    padding-left: 0
+    list-style-type: disc
+  ol, ul
+    padding-left: 1em
+  h2,h3,h4,h5
+    color: #000
+    margin: 1.8em 0 .5em
+    font-size: 1.111112em
+  &-list
+    margin: 45px 0
+    padding: 40px 0
+    border-top: 1px solid #d9d9d9
+    border-bottom: 1px solid #d9d9d9
+    font-size: 16px
+    line-height: 120%
+    p
+      margin: 0
+      height: fit-content
+  hr
+    margin: 45px 0 34px
+    border-top: 1px solid #d9d9d9
+  &__btn
+    width: fit-content
+@media screen and ( max-width: 992px )
+  .content
+    font-size: 16px

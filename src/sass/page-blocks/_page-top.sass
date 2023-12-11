@@ -1,0 +1,42 @@
+
+.page-top
+  background-color: #000
+  border-radius: 8px
+  overflow: hidden
+  &__info
+    padding: 60px 50px 90px
+    display: flex
+    flex-direction: column
+    // align-items: center
+    // justify-content: center
+    height: 100%
+  &__title
+    @include font(28px, 130%,500)
+    color: #fff
+    max-width: 340px
+    strong
+      color: $main-color
+  &__text
+    @include text
+    color: rgba(255,255,255,.7)
+    margin-top: 1em
+  &__link
+    margin-top: 2.5em
+    @include text
+    color: $sec-color
+  &__image
+    height: 100%
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+@media screen and ( max-width: 1200px )
+  .page-top
+    &__info
+      padding: 30px
+@media screen and ( max-width: 992px )
+  .page-top
+    &__info
+      padding: 30px
+    &__title
+      max-width: 100%

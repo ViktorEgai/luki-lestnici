@@ -100,6 +100,29 @@ const nextButton = `<button class="prev"><svg width="11" height="18" viewBox="0 
 				}
 			}]
 		});
+	$(".single-news-slider").slick({
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			variableWidth: true,
+			dots: false,
+			arrows: true,
+			fade: false,
+			infinite: true,
+			autoplay: false,
+			autoplaySpeed: 3000,
+			speed: 1500,
+			nextArrow: prevButton,
+			prevArrow: nextButton,
+			responsive: [ {
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					variableWidth: false,
+
+				}
+			}]
+		});
 
 	
 	function anchorScroll() {
