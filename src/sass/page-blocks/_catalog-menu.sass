@@ -1,0 +1,146 @@
+.catalog-menu
+  position: fixed
+  top: 0
+  left: 0
+  bottom: 0
+  right: 0
+  z-index: 100
+  background: rgba(26, 26, 37, 0.50)
+  opacity: 0
+  visibility: hidden
+  &.active
+    opacity: 1
+    visibility: visible
+
+  &-wrapper
+    background-color: #fff
+    margin-top: 140px
+    position: relative
+    color: #1a1a25
+    @include font (16px, 130% ,700)
+    min-height: 465px
+    // height: 100%
+    &::before
+      content: " "
+      position: absolute
+      width: 13.717px
+      height: 13.717px
+      transform: rotate(-45deg) translateY(-50%)
+      background-color: #fff
+      top: 0
+
+      left: calc(50% - 25vw)
+  &-categories
+
+  &-categories-nav
+    display: flex
+    border-bottom: 1px solid rgba(133, 143, 164, 0.20)
+  &-categories-nav__item
+
+    text-align: center
+    min-width: 100px
+    position: relative
+    padding: 23px 26px 13px
+
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 4px
+      border-radius: 1px
+      background-color: $main-color
+      display: none
+    &.active::before
+      display: block
+  &-categories-list
+    margin-top: 32px
+    display: none
+    &.active
+      display: block
+  &-categories-list__item
+    padding: 12px 14px
+    display: flex
+    justify-content: space-between
+    &.active
+      background-color: #f7f7f7
+  &-body
+    overflow-y: auto
+    overflow-x: hidden
+    max-height: 100%
+    display: none
+    &.active
+      display: block
+  &-category-item
+    display: none
+    &.active
+      display: block
+
+  &-category-item-nav
+    border-bottom: 1px solid rgba(133, 143, 164, 0.20)
+  &-category-item-nav__item
+    text-align: center
+    min-width: 100px
+    position: relative
+    padding: 23px 26px 13px
+    &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: 4px
+      border-radius: 1px
+      background-color: $main-color
+      display: none
+    &.active::before
+      display: block
+  &-category-item-body
+
+  &-category-item-list
+    margin-top: 32px
+    display: none
+    &.active
+      display: flex
+  &-category-item-list__item
+    a
+      display: flex
+      align-items: center
+      img
+        width: 82px
+        height: 82px
+        object-fit: cover
+      span
+        font-size: 14px
+        font-weight: 400
+@media screen and ( max-width: 1600px )
+  .catalog-menu-wrapper::before
+    left: calc(50% - 30vw)
+@media screen and ( max-width: 1200px )
+  .catalog-menu-wrapper::before
+    left: calc(50% - 20vw)
+
+@media screen and ( max-width: 992px )
+  .catalog-menu-body
+    padding-bottom: 30px
+    height: 400px
+  .catalog-menu-category-item-nav__item
+    padding: 15px
+    font-size: 14px
+    width: 50%
+  .catalog-menu-category-item-nav
+    display: flex
+    flex-wrap: wrap
+  .catalog-menu-categories-list
+    margin-bottom: 20px
+  .catalog-menu-wrapper::before
+    left: calc(50% - 10vw)
+@media screen and ( max-width: 440px )
+  .catalog-menu-category-item-list__item a
+    img
+      width: 40px
+      height: 40px
+      margin-right: 10px
+  .catalog-menu-wrapper::before
+    left: 45%

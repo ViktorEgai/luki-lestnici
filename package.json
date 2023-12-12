@@ -55,6 +55,7 @@
     "gsap": "^3.11.5",
     "gulp-zip": "^5.1.0",
     "jquery.nicescroll": "^3.7.6",
+    "sweetalert2": "^9.17.2",
     "swiper": "^9.4.1"
   }
 }

@@ -1,7 +1,8 @@
 const plugins = [		
 	'node_modules/bootstrap/dist/css/bootstrap-grid.css',
 	'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.min.css',
-	// 'node_modules/slick-carousel/slick/slick-theme.css',
+	'node_modules/sweetalert2/dist/sweetalert2.min.css',
+
 	'node_modules/slick-carousel/slick/slick.css',
 	'node_modules/aos/dist/aos.css',
 

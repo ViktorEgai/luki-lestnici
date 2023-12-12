@@ -1,0 +1,91 @@
+.single-product
+  margin-top: 10px
+  padding-bottom: 25px
+  &-slider-nav
+    width: 80px
+    margin-right: 20px
+    .slick-list
+      margin: -10px 0
+  &-slider-nav__item
+    background-color: $sec-body-bg-color
+    border-radius: 8px
+    aspect-ratio: 1
+    margin: 10px 0
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 5px
+  &-slider
+    background-color: $sec-body-bg-color
+    border-radius: 8px
+    max-width: calc(100% - 100px)
+    height: fit-content
+  &-slider__item
+    aspect-ratio: 1
+    img
+      width: 100%
+  &-info
+  &-info__top
+    display: flex
+    align-items: center
+    gap: 34px
+    margin-bottom: 10px
+    @include text
+
+    .label
+      @include font(12px, 16px, 500)
+      letter-spacing: -0.02em
+
+      color: #fff
+      background-color: $main-color
+      padding: 6px 11px
+      border-radius: 7px
+    .sku
+      color: rgba(58, 58, 58, 0.20)
+    .delivery
+      color: #3a3a3a
+  &__title
+    margin-bottom: 15px
+  &-list
+    max-width: 390px
+
+  &-list__item
+    @include text
+    margin-bottom: .6em
+    & span
+      color: #3a3a3a
+  &__red-link
+    text-decoration: underline
+    @include text
+    color: $main-color
+    margin-bottom: 48px
+    display: inline-block
+  &__bottom
+    display: flex
+    align-items: center
+    gap: 32px
+
+  &__btn
+    max-width: 180px
+  &__price
+    font-size: 28px
+    font-weight: 500
+    letter-spacing: -0.02em
+    color: #000
+@media screen and ( max-width: 576px )
+  .single-product
+    &-slider-nav
+      width: 100%
+      margin-right: 0
+      .slick-list
+        margin: 0 -10px
+    &-slider-nav__item
+
+      margin: 0 10px
+
+    &-slider
+
+      max-width: 100%
+      height: fit-content
+      margin-bottom: 30px

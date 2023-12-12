@@ -1,0 +1,123 @@
+.product-sizes
+  padding: 30px 0
+  &__title
+    margin-bottom: 1.25em
+  &__text
+    @include text
+    max-width: 890px
+    margin-bottom: 33px
+.size-table
+  position: relative
+  @include text
+  text-align: center
+  white-space: nowrap
+  .height-row
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    width: 39px
+    background-color: #f5e8e8
+
+    height: auto !important
+    &.right
+      left: auto
+      right: 0
+    span
+      position: absolute
+      top: 47%
+      left: -131px
+      width: 300px
+      display: inline-block
+      -webkit-transform: rotate(-90deg)
+      transform: rotate(-90deg)
+  .width-row
+    background-color: #ebedf2
+    line-height: 63px
+  .size-main-row
+
+    width: auto
+    overflow-x: auto
+    padding-bottom: 20px
+    .grey-row
+      background-color: $sec-body-bg-color
+      width: fit-content
+      display: flex
+    .white-row
+      width: 100%
+      display: flex
+      &.active
+        .pr:has(span)
+          background: rgba(33, 33, 33, 0.10)
+    .sz, .pr
+      width: 115px
+      min-width: 115px
+      height: 63px
+      line-height: 63px
+    .sz
+      vertical-align: top
+      white-space: pre-wrap
+      &.empty, &:last-child
+        width: 71px
+        min-width: 71px
+    .pr
+      cursor: pointer
+      &.nav
+        background-color: $sec-body-bg-color
+        width: 71px
+        min-width: 71px
+      &.js-hovered
+        background: rgba(33, 33, 33, 0.10)
+      &:has(span)
+        position: relative
+        &::before
+          content: ''
+          position: absolute
+          right: 0
+          bottom: 0
+          width: 0
+          height: 0
+          border-bottom: 10px solid $main-color
+          border-left: 10px solid transparent
+        &::after
+          content: 'Кликните на цену для заказа'
+          position: absolute
+          top: -40px
+          left: 50%
+          transform: translatex(-50%)
+          height: fit-content
+          background-color: $main-color
+          padding: 4px 9px
+          opacity: 0
+          visibility: hidden
+          font-size: 12px
+          line-height: 150%
+          border-radius: 5px
+
+@media screen and ( min-width: 992px )
+  .pr:not(.nav):hover
+    background: $main-color !important
+    color: #fff
+    &::before
+      bottom: auto
+      right: auto
+      top: -20px
+      left: 50%
+      transform: translateX(-50%) rotate(45deg) scale(1.2)
+    &::after
+      opacity: 1 !important
+      visibility: visible !important
+@media screen and ( max-width: 992px )
+  .size-table .size-main-row
+    overflow: auto
+    max-height: 60vh
+    .sz, .pr
+      width: 70px
+      min-width: 70px
+      height: 50px
+      line-height: 50px
+    .pr:not(.nav)
+      font-size: 12px
+    .pr.nav, & .sz.empty, & .sz:last-child
+      min-width: 50px
+      width: 50px

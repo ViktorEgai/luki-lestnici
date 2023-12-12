@@ -1,21 +1,24 @@
 .popup
   display: none
-  max-width: 560px
-  padding: 50px 40px
+  max-width: 600px
+  padding: 50px 110px 65px
   width: 100%
-  border-radius: 20px
-  background: #CEC7BD
-  .is-close-btn
-    top: 32px !important
-    right: 32px !important
-    opacity: 1 !important
-    background: none !important
-    path
-      stroke: #000
+  border-radius: 5px
+  background: #fff
+  .fancybox-close-small
+    padding: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    svg
+      width: 30px
+      height: 30px
+      path
+        fill: #000
   &-title
-    @include font (22px, 120%,700)
-    margin-bottom: 20px
-    // text-align: center
+    // @include font (22px, 120%,700)
+    margin-bottom: 1.5em
+    text-align: center
   &__image
     height: 75px
     display: flex
@@ -31,14 +34,17 @@
   &__form
     background-color: transparent
     padding: 0
-  .form-acceptance input
-    background-color: #B9B0A1
+  .form-acceptance
+    margin-top: 6px
+    font-size: 10px
+    color: rgba(58, 58, 58, 0.40)
   .form
     &-label
       font-size: 14px
   .stars
     margin-left: auto
     display: block
+
 @media screen and ( max-width: 576px )
   .popup-title
     font-size: 24px
