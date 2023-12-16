@@ -1,0 +1,92 @@
+.lc
+  padding-bottom: 70px
+  &__title
+    margin-bottom: 35px
+  &-item
+    border-radius: 8px
+    background-color: $sec-body-bg-color
+    display: flex
+    flex-direction: column
+    height: 100%
+    padding: 27px 29px 24px
+    transition: .3s
+    & *
+      transition: .3s
+  &-item__title
+    @include font(14px, 121%,700)
+    margin-bottom: 7px
+    color: #000
+  &-item__text
+    @include font( 14px, 140%)
+    color: #000
+    margin-bottom: 32px
+  &-item__more
+    margin-top: auto
+    @include text
+    color: $main-color
+  &-item__num
+  &-item__status
+    color: rgba(0, 0, 0, 0.40)
+
+  &-item__price
+    font-weight: 500
+  &-item__percent
+    font-weight: 700
+
+  &-item__descr
+
+  &-item__promocode
+    background-color: $main-color
+    color: #fff
+    width: fit-content
+  &-user
+    display: flex
+    gap: 8px
+  &-user__photo
+    width: 39px
+    height: 39px
+    border-radius: 50%
+    background-color: #d9d9d9
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &-user__info
+    width: calc(100% - 50px)
+    font-size: 14px
+    line-height: 121%
+  &-user__name
+    font-weight: 700
+    color: #000
+    margin-bottom: 12px
+  &-user__contacts
+    margin-bottom: 25px
+    a
+      display: block
+  &-user__link
+    display: block
+    @include font(14px, 178%, 700)
+    letter-spacing: -0.28px
+    color: $btn-color
+  &-nav
+    display: flex
+    flex-wrap: wrap
+    gap: 12px
+    margin-bottom: 40px
+  &-nav__item
+    padding: 8px 20px
+    border-radius: 4px
+    background-color: $sec-body-bg-color
+    transition: .3s
+
+    &.active
+      background-color: $main-color
+      color: #fff
+@media screen and ( min-width: 992px )
+  .lc-item:hover
+    background-color: $main-color
+    & *
+      color: #fff !important
+  .lc-nav__item:hover
+    background-color: $main-color
+    color: #fff

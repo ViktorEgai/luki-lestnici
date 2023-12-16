@@ -1,0 +1,50 @@
+.dropdown
+
+  &-item
+    padding: 0 0 20px
+    height: fit-content
+    border-bottom: 1px solid rgba(49, 49, 49, .3)
+    &.active
+      .dropdown-item__arrow
+        transform: rotate(-180deg)
+    &__title
+      display: flex
+      align-items: center
+      justify-content: space-between
+      @include font(20px, 160%,700)
+      cursor: pointer
+      color: #000
+      span
+        display: block
+        max-width: calc(100% - 70px)
+    &__arrow
+      transition: .3s
+    &__body
+      display: none
+
+    &__text
+      margin-top: 14px
+      @include text
+      p,ul,ol
+        margin-bottom: 1em
+
+@media screen and ( max-width: 576px )
+  .dropdown
+
+    &-decor
+      display: block
+      position: absolute
+      z-index: -1
+      max-width: 80px
+      top: 10%
+      right: -5%
+    &-item
+      padding: 10px
+      border-radius: 12px
+      &__title
+        font-size: 16px
+      &__arrow
+        width: 12px
+        height: 18px
+      &__text
+        font-size: 14px

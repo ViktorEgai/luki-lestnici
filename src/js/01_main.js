@@ -139,6 +139,11 @@ jQuery(document).ready(function ($) {
 		$(this).next().slideToggle(300);
 	});
 
+	$(".order-dropdown__top").on("click", function () {
+		$(this).parent().toggleClass("active");
+		$(this).next().slideToggle(300);
+	});
+
 	const prevButton = `<button class="next"><svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.208615 16.0958C0.093014 15.979 0.0929116 15.7909 0.208385 15.674L6.59076 9.21079C6.70615 9.09395 6.70615 8.90605 6.59076 8.78921L0.208385 2.32602C0.0929122 2.20909 0.0930144 2.02101 0.208615 1.9042L1.87989 0.215461C1.99729 0.0968293 2.18895 0.0968296 2.30635 0.215462L10.7912 8.78897C10.9068 8.90587 10.9068 9.09413 10.7912 9.21103L2.30635 17.7845C2.18894 17.9032 1.99729 17.9032 1.87988 17.7845L0.208615 16.0958Z" fill="black"/>
 </svg>

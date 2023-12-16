@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('components/page-blocks/_head.html',{ "title":"Люки лестницы" })
+
+	<body>
+		<div class="wrapper">
+			@@include('components/page-blocks/_header.html')
+			<main class="main">
+				<div class="breadcrumbs">
+					<div class="container"><a href="#">Главная</a> » <a href="#">Личный кабинет</a> » <span>Редактирование профиля</span></div>
+				</div>
+				<section class="lc">
+					<div class="container">
+						<h1 class="lc__title small-title">Редактирование профиля</h1>
+						<div class="lc-nav">
+							<a href="#" class="lc-nav__item">Главная</a>
+							<a href="#" class="lc-nav__item">Доставка</a>
+							<a href="#" class="lc-nav__item">Заказы</a>
+							<a href="#" class="lc-nav__item">Скидка</a>
+						</div>
+						<div class="row">
+							<div class="col-lg-9">
+								<div class="edit">
+									<div class="edit__left">
+										<div class="edit__photo">
+											<img src="img/user-thumb.svg" alt="" />
+										</div>
+										<a href="#" class="edit__photo-link">Изменить</a>
+									</div>
+									<div class="edit__right">
+										<div class="edit-field">
+											<label for="name">Имя</label>
+											<input type="text" placeholder="Герман" name="name" />
+											<button class="edit-btn">
+												<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M0.69401 9.432C0.637107 9.4889 0.598901 9.56126 0.582643 9.6393L0.00792775 12.5139C-0.0188977 12.6472 0.0233728 12.7846 0.119294 12.8813C0.196519 12.9585 0.300569 13 0.407058 13C0.433071 13 0.459896 12.9976 0.486722 12.9919L3.3603 12.4171C3.43996 12.4009 3.51231 12.3627 3.5684 12.3057L10 5.87375L7.12643 3L0.69401 9.432Z"
+														fill="#747B88"
+													/>
+													<path
+														d="M12.3523 0.647095C11.4896 -0.215698 10.0864 -0.215698 9.22456 0.647095L8 1.87182L11.1278 5L12.3523 3.77528C12.77 3.35848 13 2.80275 13 2.21163C13 1.6205 12.77 1.06478 12.3523 0.647095Z"
+														fill="#747B88"
+													/>
+												</svg>
+											</button>
+										</div>
+										<div class="edit-field">
+											<label for="phone">Телефон</label>
+											<input type="tel" placeholder="+7 (900) 000-00-00" name="phone" />
+											<button class="edit-btn">
+												<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M0.69401 9.432C0.637107 9.4889 0.598901 9.56126 0.582643 9.6393L0.00792775 12.5139C-0.0188977 12.6472 0.0233728 12.7846 0.119294 12.8813C0.196519 12.9585 0.300569 13 0.407058 13C0.433071 13 0.459896 12.9976 0.486722 12.9919L3.3603 12.4171C3.43996 12.4009 3.51231 12.3627 3.5684 12.3057L10 5.87375L7.12643 3L0.69401 9.432Z"
+														fill="#747B88"
+													/>
+													<path
+														d="M12.3523 0.647095C11.4896 -0.215698 10.0864 -0.215698 9.22456 0.647095L8 1.87182L11.1278 5L12.3523 3.77528C12.77 3.35848 13 2.80275 13 2.21163C13 1.6205 12.77 1.06478 12.3523 0.647095Z"
+														fill="#747B88"
+													/>
+												</svg>
+											</button>
+										</div>
+										<div class="edit-field">
+											<label for="surname">Фамилия</label>
+											<input type="text" placeholder="Константинопольский" name="surname" />
+											<button class="edit-btn">
+												<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M0.69401 9.432C0.637107 9.4889 0.598901 9.56126 0.582643 9.6393L0.00792775 12.5139C-0.0188977 12.6472 0.0233728 12.7846 0.119294 12.8813C0.196519 12.9585 0.300569 13 0.407058 13C0.433071 13 0.459896 12.9976 0.486722 12.9919L3.3603 12.4171C3.43996 12.4009 3.51231 12.3627 3.5684 12.3057L10 5.87375L7.12643 3L0.69401 9.432Z"
+														fill="#747B88"
+													/>
+													<path
+														d="M12.3523 0.647095C11.4896 -0.215698 10.0864 -0.215698 9.22456 0.647095L8 1.87182L11.1278 5L12.3523 3.77528C12.77 3.35848 13 2.80275 13 2.21163C13 1.6205 12.77 1.06478 12.3523 0.647095Z"
+														fill="#747B88"
+													/>
+												</svg>
+											</button>
+										</div>
+										<div class="edit-field">
+											<label for="email">Email</label>
+											<input
+												type="email"
+												placeholder="mail@website.ru
+"
+												name="email"
+											/>
+											<button class="edit-btn">
+												<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M0.69401 9.432C0.637107 9.4889 0.598901 9.56126 0.582643 9.6393L0.00792775 12.5139C-0.0188977 12.6472 0.0233728 12.7846 0.119294 12.8813C0.196519 12.9585 0.300569 13 0.407058 13C0.433071 13 0.459896 12.9976 0.486722 12.9919L3.3603 12.4171C3.43996 12.4009 3.51231 12.3627 3.5684 12.3057L10 5.87375L7.12643 3L0.69401 9.432Z"
+														fill="#747B88"
+													/>
+													<path
+														d="M12.3523 0.647095C11.4896 -0.215698 10.0864 -0.215698 9.22456 0.647095L8 1.87182L11.1278 5L12.3523 3.77528C12.77 3.35848 13 2.80275 13 2.21163C13 1.6205 12.77 1.06478 12.3523 0.647095Z"
+														fill="#747B88"
+													/>
+												</svg>
+											</button>
+										</div>
+										<div class="edit-field">
+											<label for="address">Адрес</label>
+											<input
+												type="text"
+												placeholder="ул. Ленина, дом 43, кв. 34
+"
+												name="address"
+											/>
+											<button class="edit-btn">
+												<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M0.69401 9.432C0.637107 9.4889 0.598901 9.56126 0.582643 9.6393L0.00792775 12.5139C-0.0188977 12.6472 0.0233728 12.7846 0.119294 12.8813C0.196519 12.9585 0.300569 13 0.407058 13C0.433071 13 0.459896 12.9976 0.486722 12.9919L3.3603 12.4171C3.43996 12.4009 3.51231 12.3627 3.5684 12.3057L10 5.87375L7.12643 3L0.69401 9.432Z"
+														fill="#747B88"
+													/>
+													<path
+														d="M12.3523 0.647095C11.4896 -0.215698 10.0864 -0.215698 9.22456 0.647095L8 1.87182L11.1278 5L12.3523 3.77528C12.77 3.35848 13 2.80275 13 2.21163C13 1.6205 12.77 1.06478 12.3523 0.647095Z"
+														fill="#747B88"
+													/>
+												</svg>
+											</button>
+										</div>
+										<div class="edit-field">
+											<label for="city">Город</label>
+											<input type="text" placeholder="Москва" name="city" />
+											<button class="edit-btn">
+												<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path
+														d="M0.69401 9.432C0.637107 9.4889 0.598901 9.56126 0.582643 9.6393L0.00792775 12.5139C-0.0188977 12.6472 0.0233728 12.7846 0.119294 12.8813C0.196519 12.9585 0.300569 13 0.407058 13C0.433071 13 0.459896 12.9976 0.486722 12.9919L3.3603 12.4171C3.43996 12.4009 3.51231 12.3627 3.5684 12.3057L10 5.87375L7.12643 3L0.69401 9.432Z"
+														fill="#747B88"
+													/>
+													<path
+														d="M12.3523 0.647095C11.4896 -0.215698 10.0864 -0.215698 9.22456 0.647095L8 1.87182L11.1278 5L12.3523 3.77528C12.77 3.35848 13 2.80275 13 2.21163C13 1.6205 12.77 1.06478 12.3523 0.647095Z"
+														fill="#747B88"
+													/>
+												</svg>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-3 mb-4">
+								<div class="lc-user">
+									<div class="lc-user__photo">
+										<img src="img/user-thumb.svg" alt="" />
+									</div>
+									<div class="lc-user__info">
+										<div class="lc-user__name">Герман Константинопольский</div>
+										<div class="lc-user__contacts">
+											<a href="#"> mail@website.ru</a>
+											<a href="#">+7 (900) 000-00-00</a>
+										</div>
+										<a href="#" class="lc-user__link">Сохранить</a>
+										<a href="#" class="lc-user__link">Выйти</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+
+			@@include('components/page-blocks/_footer.html') @@include('components/page-blocks/_popup.html')
+			@@include('components/page-blocks/_scripts.html')
+		</div>
+	</body>
+</html>

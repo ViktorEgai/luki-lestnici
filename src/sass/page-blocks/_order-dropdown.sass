@@ -1,0 +1,45 @@
+.order-dropdown
+  padding: 23px 0
+  border-bottom: 1px solid #D9D9D9
+  &.active
+    .order-arrow
+      transform: rotate(90deg)
+  &__top
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-size: 14px
+    color: #384255
+    gap: 40px
+
+  &__body
+    display: none
+    margin-top: 30px
+.order
+  &-info
+    flex: 1 1 auto
+    display: flex
+    align-items: center
+    gap: 12px
+    justify-content: space-between
+  &-date
+  &-number
+    font-weight: 700
+  &-status
+  &-price
+    font-weight: 700
+
+  &-arrow
+    transition: .3s
+    cursor: pointer
+@media screen and ( max-width: 768px )
+  .order
+    &-info
+      flex-wrap: wrap
+      gap: 8px 0
+    &-date,  &-number,  &-status,  &-price
+      width: 50%
+@media screen and ( max-width: 440px )
+  .order
+    &-date,  &-number,  &-status,  &-price
+      width: 100%
