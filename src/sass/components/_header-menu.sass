@@ -6,12 +6,13 @@
   &__item
     position: relative
     a
-
       transition: .3s
-      color: $primary-text-color
+      color: rgba(0,0,0,.7)
       position: relative
       z-index: 2
-
+      &.active
+        color: #000
+        font-weight: 700
       &::before
         content: ''
         width: 0

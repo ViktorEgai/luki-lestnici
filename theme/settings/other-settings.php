@@ -43,28 +43,28 @@ if( function_exists('acf_add_options_page') ) {
 add_filter('wpcf7_autop_or_not', '__return_false');
 
 
-add_filter("wpseo_breadcrumb_links", "custom_breadcrumbs");
+// add_filter("wpseo_breadcrumb_links", "custom_breadcrumbs");
 
-function custom_breadcrumbs($links)
-{
-    $post_type = get_post_type();
+// function custom_breadcrumbs($links)
+// {
+//     $post_type = get_post_type();
 
-    if ($post_type === 'service') {
-        $breadcrumb[] = array(
-            'url' => '/services',
-            'text' => 'Услуги'
-        );
-        array_splice($links, 1, -3, $breadcrumb);
-    }
-    if ($post_type === 'post') {
-        $breadcrumb[] = array(
-            'url' => '/news',
-            'text' => 'Статьи'
-        );
-        array_splice($links, 1, -3, $breadcrumb);
-    }
-    return $links;
-}
+//     if ($post_type === 'service') {
+//         $breadcrumb[] = array(
+//             'url' => '/services',
+//             'text' => 'Услуги'
+//         );
+//         array_splice($links, 1, -3, $breadcrumb);
+//     }
+//     if ($post_type === 'post') {
+//         $breadcrumb[] = array(
+//             'url' => '/news',
+//             'text' => 'Статьи'
+//         );
+//         array_splice($links, 1, -3, $breadcrumb);
+//     }
+//     return $links;
+// }
 add_post_type_support( 'post', array(
      'excerpt',
 ) );

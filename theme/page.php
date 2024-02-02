@@ -2,21 +2,20 @@
 get_header();
 ?>
 
-	<main class="main">
-    <? include('template-parts/page-blocks/breadcrumbs.php') ?>
-	<div class="container">
-    <div class="page-top">
-      <h1 class=" page-title"><? the_title() ?></h1>
-    </div>
-    <div class="descr">
-      <div class="row">
-  
-        <div class="descr-text"><? the_content() ?></div>
+<main class="main">
+  <? get_template_part('template-parts/breadcrumbs') ?>
+
+  <section class="content mb-5">
+    <div class="container">
+      <h1 class="content__title small-title"><? the_title() ?></h1>
+      <div class="content-block col-xl-10 mx-auto">
+        <? the_content() ?>
+
+        <a href="#" onclick="history.back()" class="content__btn btn btn--transparent btn--red">Назад</a>
       </div>
     </div>
-  </div>
-
-	</main><!-- #main -->
+  </section>
+</main>
 
 <?php
 

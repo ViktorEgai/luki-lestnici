@@ -33,6 +33,7 @@
     background-color: $sec-body-bg-color
     padding-top: 40px
     margin-bottom: 15px
+    display: block
     img
       aspect-ratio: 280/264
       width: 100%
@@ -45,11 +46,16 @@
     @include font(18px,100%,500)
     letter-spacing: -0.36px
     display: flex
+    align-items: flex-end
     gap: 9px
-    span
+    del
       color: $primary-text-color
-      text-decoration: line-through
       font-size: 12px
+      line-height: 100%
+
+    ins
+      text-decoration: none
+      order: -1
   &-item__btn
     margin-top: 20px
   &__btn

@@ -4,6 +4,7 @@ add_action( 'after_setup_theme', 'menu');
 function menu() {
   register_nav_menu('header-menu', 'Меню шапки');
   register_nav_menu('footer-menu', 'Меню подвала');
+  register_nav_menu('footer-links', 'Доп меню подвала');
 }
 
 // Изменяет основные параметры меню
@@ -19,6 +20,11 @@ function filter_wp_menu_args ($args) {
     $args['container'] = false;
     $args['item_wrap'] = '<ul class="%2$s ">%3$s </ul>';
     $args['menu_class'] = 'footer-menu';
+  }
+  if ( $args['theme_location'] === 'footer-links') {
+    $args['container'] = false;
+    $args['item_wrap'] = '<ul class="%2$s ">%3$s </ul>';
+    $args['menu_class'] = 'footer-links';
   }
   return $args;
 } 
@@ -52,6 +58,28 @@ function filter_nav_menu_submenu_css_class( $classes, $args, $depth) {
       // классы для ul sub-menu
     ];
   }
+  if ($args -> theme_location === 'footer-menu' ) {
+    $classes = [
+      'footer-submenu'
+      // классы для ul sub-menu
+    ];
+  }
   
   return $classes;
 }
+add_filter( 'nav_menu_link_attributes', 'filter_nav_menu_link_attributes', 10, 4 );
+function filter_nav_menu_link_attributes( $attr, $item, $args, $depth) {
+  
+   // класс для ссылки
+
+    if ( $item->current ) {
+      $class = 'active';
+      $attr['class'] = isset( $attr['class'] ) ? "{$attr['class']} $class" : $class;
+    }
+    
+
+
+  
+
+  return $attr;
+} 
