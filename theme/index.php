@@ -36,25 +36,30 @@ get_header();
 
 				<? endwhile;
 				echo '</div>';
-				the_posts_navigation();
 
-			else :
-
-				get_template_part( 'template-parts/content', 'none' );
 
 			endif;
 			?>
-				
 			
-			</div>
-			<div class="news__pagination pagination">
-				<a href="#" class="active">1</a>
-				<a href="#">2</a>
-				<a href="#">3</a>
-				<a href="#">4</a>
-				...
-				<a href="#">10</a>
-			</div>
+
+			<?php
+			$args = array(
+				'show_all'     => false, // показаны все страницы участвующие в пагинации
+				'end_size'     => 1,     // количество страниц на концах
+				'mid_size'     => 1,     // количество страниц вокруг текущей
+				'prev_next'    => false,  // выводить ли боковые ссылки "предыдущая/следующая страница".
+				'prev_text'    => __('« '),
+				'next_text'    => __(' »'),
+				'add_args'     => false, // Массив аргументов (переменных запроса), которые нужно добавить к ссылкам.
+				'add_fragment' => '',     // Текст который добавиться ко всем ссылкам.
+				'screen_reader_text' => __( 'Posts navigation' ),
+				'class'        => ' pagination', // CSS класс, добавлено в 5.5.0.
+			);
+			echo '<div class="news__pagination ">';
+			the_posts_pagination($args); 
+			echo '</div>';
+			?>
+			
 		</div>
 	</section>
 </main>

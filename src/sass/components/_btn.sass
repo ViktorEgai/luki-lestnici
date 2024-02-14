@@ -26,6 +26,8 @@
   color: #fff
 
   width: 100%
+  &:disabled
+    opacity: 0.4
   &--red
     background-color: $main-color
     border: 1px solid $main-color
@@ -41,7 +43,7 @@
     background-color: #F3F4F5
     color: #000
 @media screen and ( min-width: 992px )
-  .btn:hover
+  .btn:not(:disabled):hover
     box-shadow: 3px 3px 0px $btn-color-hover
   .btn--red:hover
     box-shadow: 3px 3px 0px $main-color

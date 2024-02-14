@@ -1,7 +1,7 @@
 <section class="contacts">
   <div class="container">
     <div class="contacts-map" id="map">
-      <img src="img/map.png" alt="" />
+     <? the_field('contacts_map', 'options') ?>
     </div>
     <div class="contacts-info">
       <h2 class="contacts__title section-title">Контакты</h2>

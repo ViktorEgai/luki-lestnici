@@ -1,7 +1,8 @@
 .pagination
-  display: flex
-  align-items: center
-  justify-content: center
+  ul, .nav-links
+    display: flex
+    align-items: center
+    justify-content: center
   a
     width: 30px
     height: 30px
@@ -11,5 +12,13 @@
     color: #909cb5
     font-size: 14px
     font-weight: 700
-    &.active
-      color: $main-color
+  .current
+    color: $main-color
+    width: 30px
+    height: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    color: #909cb5
+    font-size: 14px
+    font-weight: 700

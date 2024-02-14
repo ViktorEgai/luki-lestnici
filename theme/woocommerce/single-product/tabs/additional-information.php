@@ -17,14 +17,13 @@
 
 defined( 'ABSPATH' ) || exit;
 
-global $product;
+global $product; ?>
 
-$heading = apply_filters( 'woocommerce_product_additional_information_heading', __( 'Additional information', 'woocommerce' ) );
+<h3 class="about-product-block__title" id="characteristic">Характеристики:</h3>
 
-?>
 
-<?php if ( $heading ) : ?>
-	<h2><?php echo esc_html( $heading ); ?></h2>
-<?php endif; ?>
-
-<?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+<div class="about-product-block__text">
+	<?php do_action( 'woocommerce_product_additional_information', $product ); ?>
+	
+</div>
+<a href="#" class="about-product-block__btn">Развернуть характеристики </a>

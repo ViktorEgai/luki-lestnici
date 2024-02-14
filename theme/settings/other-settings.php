@@ -68,3 +68,41 @@ add_filter('wpcf7_autop_or_not', '__return_false');
 add_post_type_support( 'post', array(
      'excerpt',
 ) );
+
+function declOfNum($num, $titles) {
+    $cases = array(2, 0, 1, 1, 1, 2);
+
+    return $num . " " . $titles[($num % 100 > 4 && $num % 100 < 20) ? 2 : $cases[min($num % 10, 5)]];
+}
+
+
+
+function count_products ($slug) {
+
+    //return $count;
+    $args = array(
+      'post_type'     => 'product', //post type, I used 'product'
+      'post_status'   => 'publish', // just tried to find all published post
+      'posts_per_page' => -1,  //show all
+      'tax_query' => array(
+        'relation' => 'AND',
+        array(
+          'taxonomy' => 'product_cat',  //taxonomy name  here, I used 'product_cat'
+          'field' => 'slug',
+          'terms' => array( $slug )
+        )
+      )
+    );
+
+    $query = new WP_Query( $args);
+
+    /*
+    echo '<pre>';
+
+    print_r($query->post_count);
+    echo '</pre>';
+    */
+
+    return (int)$query->post_count;
+
+}

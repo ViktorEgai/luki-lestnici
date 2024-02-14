@@ -17,14 +17,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
-global $post;
+global $post; ?>
 
-$heading = apply_filters( 'woocommerce_product_description_heading', __( 'Description', 'woocommerce' ) );
 
-?>
+<h2 class="about-product-block__title">Допольнительная информация</h2>
 
-<?php if ( $heading ) : ?>
-	<h2><?php echo esc_html( $heading ); ?></h2>
-<?php endif; ?>
-
-<?php the_content(); ?>
+<div class="about-product-block__text">
+	<?php the_content(); ?>
+</div>
+<a href="#" class="about-product-block__btn">Развернуть информацию </a>

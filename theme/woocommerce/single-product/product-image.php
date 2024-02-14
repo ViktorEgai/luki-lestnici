@@ -24,32 +24,32 @@ if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
 
 global $product;
 
-$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
 $post_thumbnail_id = $product->get_image_id();
-$wrapper_classes   = apply_filters(
-	'woocommerce_single_product_image_gallery_classes',
-	array(
-		'woocommerce-product-gallery',
-		'woocommerce-product-gallery--' . ( $post_thumbnail_id ? 'with-images' : 'without-images' ),
-		'woocommerce-product-gallery--columns-' . absint( $columns ),
-		'images',
-	)
-);
+$attachment_ids = $product->get_gallery_image_ids();
+$image_ids = [];
+$image_ids[]= $post_thumbnail_id ;
+if (!empty($attachment_ids)) {
+	foreach ( $attachment_ids as $i) $image_ids[] = $i;
+} 
 ?>
-<div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
-	<div class="woocommerce-product-gallery__wrapper">
-		<?php
-		if ( $post_thumbnail_id ) {
-			$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-		} else {
-			$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-			$html .= '</div>';
-		}
 
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-		do_action( 'woocommerce_product_thumbnails' );
-		?>
+<div class="col-lg-6  mb-4 mb-lg-0">
+	<div class="single-product-left d-flex flex-column flex-sm-row">
+		<div class="single-product-slider-nav order-2 order-sm-1">
+			<? foreach ($image_ids as $id) : ?>
+				<div class="single-product-slider-nav__item">
+					<?= '<img src="'.wp_get_attachment_image_url( $id, 'medium' ).'" alt="">';?>
+				</div>
+			<? endforeach ?>
+			
+		</div>
+		<div class="single-product-slider order-1 order-sm-2">
+			<? foreach ($image_ids as $id) : ?>
+			<div class="single-product-slider__item">
+				<?= '<a href="'.wp_get_attachment_image_url( $id, 'full' ).'" data-fancybox="gallery" ><img src="'.wp_get_attachment_image_url( $id, 'medium_large' ).'" alt=""></a>';?>
+			</div>
+			<? endforeach ?>
+		</div>
+		<div class="wishlist"><?= do_shortcode('[yith_wcwl_add_to_wishlist]') ?></div>
 	</div>
 </div>

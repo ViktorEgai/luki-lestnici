@@ -1,121 +1,104 @@
 <? get_header(); ?>
 
 <main class="main">
-  <? get_template_part('template-parts/breadcrumbs') ?>
+<? get_template_part('template-parts/breadcrumbs') ?>
 
-  <section class="single-news">
-    <div class="container">
-        <h1 class="single-news__title small-title"><? the_title() ?></h1>
-        <div class="page-top">
-            <div class="row">
-                <div class="col-lg-4 mb-4 mb-lg-0 order-2 order-lg-1">
-                    <div class="page-top__info">
-                        <h2 class="page-top__title">
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                        </h2>
-                    </div>
-                </div>
-                <div class="col-lg-8 order-1 order-lg-2">
-                    <div class="page-top__image">
-                        <? the_post_thumbnail('medium_large') ?>
-                    </div>
-                </div>
+<section class="single-news">
+  <div class="container">
+      <h1 class="single-news__title small-title"><? the_title() ?></h1>
+      <div class="page-top">
+          <div class="row">
+              <div class="col-lg-4 mb-4 mb-lg-0 order-2 order-lg-1">
+                  <div class="page-top__info">
+                      <h2 class="page-top__title">
+                          <? the_field('page_top_title') ?>
+                      </h2>
+                  </div>
+              </div>
+              <div class="col-lg-8 order-1 order-lg-2">
+                  <div class="page-top__image">
+                      <? the_post_thumbnail('medium_large') ?>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <? if (have_rows('content')) :
+          while ( have_rows('content') ) : the_row();
+          if( get_row_layout() == 'text_block' ) :
+            $title = get_sub_field('title');
+            $text_1 = get_sub_field('text_1');
+            $text_2 = get_sub_field('text_2');
+            $column_count = get_sub_field('column_count'); ?>
+            <div class="single-news-content">
+              <? if ($title ) : ?>
+              <h2 class="single-news__title small-title"><?= $title ?></h2>
+              <? endif ?>
+              <div class="row">
+                <? if ($column_count == 1) :  ?>
+                  <div class="col-lg-9">
+                    <?= $text_1 ?>
+                  </div>
+                <? else : ?>
+                  <div class="col-lg-6 mb-3">
+                    <?= $text_1 ?>
+                  </div>
+                  <div class="col-lg-6 mb-3">
+                    <?= $text_2 ?>
+                  </div>
+                <? endif ?>
+              </div>
             </div>
-        </div>
-        <div class="single-news-content">
-            <h2 class="single-news__title small-title">Lorem ipsum dolor sit amet</h2>
-            <div class="row">
-                <div class="col-lg-9">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-                        sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
-                        ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
-                        elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-                        Aliquam lorem ante,
-                    </p>
-                </div>
+          <? elseif( get_row_layout() == 'slider' ) : 
+            $title = get_sub_field('title');
+            $gallery = get_sub_field('gallery');
+            ?>
+              
+            <div class="single-news-block">
+              <? if ($title) : ?>
+              <h2 class="single-news__title small-title"><?= $title ?></h2>
+              <? endif ?>
+              <? if (!empty($gallery)) :  ?>
+              <div class="single-news-slider">
+                <? foreach($gallery as $image) : ?>
+                  <div class="single-news-slider__item">
+                      <a href="<?= $image['url'] ?>" data-fancybox="gallery"><img src="<?= $image['sizes']['medium_large'] ?>" alt="<?= $image['alt'] ?>" /></a>
+                  </div>
+                <? endforeach ?>
+              </div>
+              <? endif ?>
             </div>
-        </div>
-        <div class="single-news-block">
-            <h2 class="single-news__title small-title">Lorem ipsum dolor sit amet</h2>
-            <div class="single-news-slider">
-                <div class="single-news-slider__item">
-                    <img src="img/slide-1.png" alt="" />
-                </div>
-                <div class="single-news-slider__item">
-                    <img src="img/slide-1.png" alt="" />
-                </div>
-                <div class="single-news-slider__item">
-                    <img src="img/slide-1.png" alt="" />
-                </div>
-                <div class="single-news-slider__item">
-                    <img src="img/slide-1.png" alt="" />
-                </div>
-            </div>
-        </div>
-        <div class="single-news-content">
-            <h2 class="single-news__title small-title">Lorem ipsum dolor sit amet</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-3">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-                        sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
-                        ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
-                        elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
-                        Aliquam lorem ante,
-                    </p>
-                </div>
-                <div class="col-lg-6 mb-3">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque
-                        penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis,
-                        sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus
-                        ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integ
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-  </section>
-  <section class="other-news">
-    <div class="container">
-        <h2 class="other-news__title small-title">Вам может быть интересно</h2>
-        <div class="row">
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <a href="#" class="news-item">
-                    <img src="img/news-thumbs.png" alt="" class="news-item__thumb" />
-                    <p class="news-item__title">Lorem ipsum dolor sit amet</p>
-                    <div class="news-item__excerpt">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                    </div>
-                    <div class="news-item__date">09.08.23</div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <a href="#" class="news-item">
-                    <img src="img/news-thumbs.png" alt="" class="news-item__thumb" />
-                    <p class="news-item__title">Lorem ipsum dolor sit amet</p>
-                    <div class="news-item__excerpt">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                    </div>
-                    <div class="news-item__date">09.08.23</div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-sm-6 mb-4">
-                <a href="#" class="news-item">
-                    <img src="img/news-thumbs.png" alt="" class="news-item__thumb" />
-                    <p class="news-item__title">Lorem ipsum dolor sit amet</p>
-                    <div class="news-item__excerpt">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                    </div>
-                    <div class="news-item__date">09.08.23</div>
-                </a>
-            </div>
-        </div>
-    </div>
-  </section>
+          <? endif;
+          endwhile;
+      endif;   ?>
+    
+      
+  </div>
+</section>
+
+<? $relative = get_field("relative");
+if (!empty($relative)) :  ?>
+<section class="other-news">
+  <div class="container">
+      <h2 class="other-news__title small-title"><? the_field('relative_title')  ?></h2>
+      <div class="row">
+        <? foreach ($relative as $post) :
+          setup_postdata( $post ); ?>
+          <div class="col-lg-4 col-sm-6 mb-4">
+              <a href="<? the_permalink() ?>" class="news-item">
+                  <? the_post_thumbnail( 'medium_large', ['class'=>'news-item__thumb'] ) ?>
+                  <p class="news-item__title"><? the_title() ?></p>
+                  <div class="news-item__excerpt">
+                      <? the_excerpt(  ) ?>
+                  </div>
+                  <div class="news-item__date"><?= get_the_date('d.m.Y') ?></div>
+              </a>
+          </div>
+          <? endforeach;
+          wp_reset_postdata() ?>
+      </div>
+  </div>
+</section>
+<? endif ?>
 </main>
 
 <?php

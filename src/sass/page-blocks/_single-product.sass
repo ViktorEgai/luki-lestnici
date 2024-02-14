@@ -1,31 +1,67 @@
 .single-product
   margin-top: 10px
   padding-bottom: 25px
+  &-left
+    position: relative
+    .wishlist
+      position: absolute
+      top: 10px
+      right: 10px
+      background-color: #fff
+      border-radius: 50%
+      width: 28px
+      height: 28px
+      z-index: 5
+      display: flex
+      align-items: center
+      justify-content: center
   &-slider-nav
     width: 80px
     margin-right: 20px
     .slick-list
       margin: -10px 0
+    .slick-arrow
+      position: absolute
+      left: 50%
+      transform: translateX(-50%) rotate(90deg)
+      z-index: 1
+    .prev
+      top: -20px
+
+    .next
+      bottom: -20px
   &-slider-nav__item
     background-color: $sec-body-bg-color
     border-radius: 8px
-    aspect-ratio: 1
     margin: 10px 0
     cursor: pointer
     display: flex
     align-items: center
     justify-content: center
     padding: 5px
+    overflow: hidden
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+      aspect-ratio: 1
+
   &-slider
     background-color: $sec-body-bg-color
     border-radius: 8px
     max-width: calc(100% - 100px)
     height: fit-content
   &-slider__item
-    aspect-ratio: 1
+    overflow: hidden
+
     img
       width: 100%
+      height: 100%
+      object-fit: cover
+      aspect-ratio: 1
+
   &-info
+
   &-info__top
     display: flex
     align-items: center
@@ -47,6 +83,13 @@
       color: #3a3a3a
   &__title
     margin-bottom: 15px
+  &__excerpt
+    max-width: 390px
+    @include text
+    ul
+      list-style: none
+    p, ul,ol,li
+      margin-bottom: .6em
   &-list
     max-width: 390px
 
@@ -65,7 +108,14 @@
     display: flex
     align-items: center
     gap: 32px
+    form
+      gap: 32px
+    .quantity
 
+      input
+        max-width: 50px
+    .qib-button-wrapper .quantity input.input-text.qty.text
+      font-size: 14px
   &__btn
     max-width: 180px
   &__price
@@ -73,6 +123,7 @@
     font-weight: 500
     letter-spacing: -0.02em
     color: #000
+    margin-bottom: 20px
 @media screen and ( max-width: 576px )
   .single-product
     &-slider-nav

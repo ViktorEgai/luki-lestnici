@@ -2,6 +2,7 @@
   margin: 30px 0
   padding: 60px 0
   background-color: $sec-body-bg-color
+  overflow: hidden
   &__info
     display: flex
     flex-direction: column
@@ -30,6 +31,7 @@
     gap: 20px
     background-color: #fff
     border-radius: 5.564px
+    z-index: 1
   &-nums__item
     max-width: 70px
   &-nums__item-num
@@ -42,7 +44,7 @@
   &__image
     img
       aspect-ratio: 460/505
-      object-fit: cover
+      object-fit: contain
       margin-left: auto
 @media screen and ( max-width: 992px )
   .about
