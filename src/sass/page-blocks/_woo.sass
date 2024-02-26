@@ -15,3 +15,45 @@
   float: none !important
 .qib-button-wrapper .quantity input.input-text.qty.text
   background-color: transparent
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment
+  background: none
+  border: 1px solid #f3f4f5
+  font-size: 14px
+#add_payment_method #payment div.payment_box, .woocommerce-cart #payment div.payment_box, .woocommerce-checkout #payment div.payment_box
+  background-color: #f3f4f5
+#add_payment_method #payment div.payment_box::before, .woocommerce-cart #payment div.payment_box::before, .woocommerce-checkout #payment div.payment_box::before
+  border-bottom-color: #f3f3f5
+#add_payment_method #payment ul.payment_methods li input, .woocommerce-cart #payment ul.payment_methods li input, .woocommerce-checkout #payment ul.payment_methods li input
+  width: 16px
+  height: 16px
+  border-radius: 50%
+  border: 1px solid $main-color
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%,-50%)
+    width: 10px
+    height: 10px
+    background-color: $main-color
+    opacity: 0
+    border-radius: 50%
+  &:checked
+    &::before
+      opacity: 1
+.dgwt-wcas-search-wrapp
+
+  margin: 0
+  max-width: 100% !important
+.dgwt-wcas-sf-wrapp
+  display: flex
+  align-items: center
+.dgwt-wcas-style-pirx .dgwt-wcas-sf-wrapp
+  background: none
+  padding: 0
+  border-radius: 0
+.dgwt-wcas-style-pirx .dgwt-wcas-sf-wrapp input[type=search].dgwt-wcas-search-input
+  border-radius: 6px
+  font-family: inherit

@@ -96,12 +96,7 @@ function count_products ($slug) {
 
     $query = new WP_Query( $args);
 
-    /*
-    echo '<pre>';
-
-    print_r($query->post_count);
-    echo '</pre>';
-    */
+    
 
     return (int)$query->post_count;
 

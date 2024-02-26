@@ -67,23 +67,32 @@
   &-center__search
     border-radius: 8px
     background-color: $main-color
-    display: flex
-    align-items: center
+
     padding: 3px
     max-width: 680px
     width: 100%
     margin: 0 auto
     input
-      padding: 12.5px 15px
-      border-radius: 6px
-      background: #fff
-      border: none
+      padding: 12.5px 15px !important
+      border-radius: 6px !important
+      background: #fff !important
+      border: none !important
       flex: 1 1 auto
     button
-      padding: 0 21px
+      padding: 0 21px !important
       display: flex
       align-items: center
       justify-content: center
+      background: none !important
+      position: relative !important
+      top: auto !important
+      left: auto !important
+      right: auto !important
+      path
+        fill: #fff !important
+      &:hover
+        box-shadow: none !important
+        border-radius: 0 !important
   &-center-buttons
     display: flex
     align-items: center

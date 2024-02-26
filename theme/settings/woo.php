@@ -50,10 +50,10 @@ function ask_percentage_sale( $text, $post, $product ) {
                 }
             }        
         }
-        $text = '<span class="onsale">' . $maximumper  . '%</span>';
+        $text = '<span class="products-item__sale"> -' . $maximumper  . '%</span>';
     } elseif ( $product->get_type() == 'simple' ) {
         $percentage = round( ( ( $product->get_regular_price() - $product->get_sale_price() ) / $product->get_regular_price() ) * 100 );
-        $text = '<span class="onsale products-item__sale">' . $percentage . '%</span>';
+        $text = '<span class=" products-item__sale"> -' .  $percentage . '%</span>';
     }   
 
     return $text;
@@ -201,29 +201,45 @@ add_action( 'woocommerce_before_shop_loop' , function() { ?>
 <div class="catalog-body">
 <?}, 40 );
 add_action( 'woocommerce_before_shop_loop', function() {?>
-  <div class="catalog-body-top d-flex">
+  <div class="catalog-body-top d-flex align-items-center">
     
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="5" y1="8" x2="19" y2="8" stroke="#FE0000" stroke-width="2" />
-        <line x1="5" y1="12" x2="14" y2="12" stroke="#FE0000" stroke-width="2" />
-        <line x1="5" y1="16" x2="9" y2="16" stroke="#FE0000" stroke-width="2" />
-      </svg>
-
+     <span class="sort-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="5" y1="8" x2="19" y2="8" stroke="#FE0000" stroke-width="2" />
+          <line x1="5" y1="12" x2="14" y2="12" stroke="#FE0000" stroke-width="2" />
+          <line x1="5" y1="16" x2="9" y2="16" stroke="#FE0000" stroke-width="2" />
+        </svg>
+  
+     </span>
 		
     <div class="catalog-filter-list">
 			<? woocommerce_catalog_ordering() ?>
     
     </div>
-    <button class="catalog-filter-btn ms-auto">
-      <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M14.2222 2.77437C15.2579 3.13472 16 4.10706 16 5.25C16 6.39294 15.2579 7.36528 14.2222 7.72563V13.125C14.2222 13.6082 13.8243 14 13.3333 14C12.8424 14 12.4444 13.6082 12.4444 13.125V7.72563C11.4087 7.36528 10.6667 6.39294 10.6667 5.25C10.6667 4.10706 11.4087 3.13472 12.4444 2.77437V0.875C12.4444 0.391751 12.8424 0 13.3333 0C13.8243 0 14.2222 0.391751 14.2222 0.875V2.77437ZM10.6667 9.625C10.6667 10.7679 9.92462 11.7403 8.88889 12.1006V13.125C8.88889 13.6082 8.49092 14 8 14C7.50908 14 7.11111 13.6082 7.11111 13.125V12.1006C6.07538 11.7403 5.33333 10.7679 5.33333 9.625C5.33333 8.48206 6.07538 7.50972 7.11111 7.14937V0.875C7.11111 0.391751 7.50908 0 8 0C8.49092 0 8.88889 0.391751 8.88889 0.875V7.14937C9.92462 7.50972 10.6667 8.48206 10.6667 9.625ZM3.55556 2.77437C4.59128 3.13472 5.33333 4.10706 5.33333 5.25C5.33333 6.39294 4.59128 7.36528 3.55556 7.72563V13.125C3.55556 13.6082 3.15759 14 2.66667 14C2.17575 14 1.77778 13.6082 1.77778 13.125V7.72563C0.742051 7.36528 0 6.39294 0 5.25C0 4.10706 0.742051 3.13472 1.77778 2.77437V0.875C1.77778 0.391751 2.17575 0 2.66667 0C3.15759 0 3.55556 0.391751 3.55556 0.875V2.77437ZM2.66667 6.125C3.15759 6.125 3.55556 5.73325 3.55556 5.25C3.55556 4.76675 3.15759 4.375 2.66667 4.375C2.17575 4.375 1.77778 4.76675 1.77778 5.25C1.77778 5.73325 2.17575 6.125 2.66667 6.125ZM13.3333 6.125C13.8243 6.125 14.2222 5.73325 14.2222 5.25C14.2222 4.76675 13.8243 4.375 13.3333 4.375C12.8424 4.375 12.4444 4.76675 12.4444 5.25C12.4444 5.73325 12.8424 6.125 13.3333 6.125ZM8 10.5C8.49092 10.5 8.88889 10.1082 8.88889 9.625C8.88889 9.14175 8.49092 8.75 8 8.75C7.50908 8.75 7.11111 9.14175 7.11111 9.625C7.11111 10.1082 7.50908 10.5 8 10.5Z"
-          fill="#FE0000"
-        />
-      </svg>
-    </button>
+    <div class="ms-auto catalog-filter">
+      <button class="catalog-filter-btn">
+        <svg width="16" height="14" viewBox="0 0 16 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M14.2222 2.77437C15.2579 3.13472 16 4.10706 16 5.25C16 6.39294 15.2579 7.36528 14.2222 7.72563V13.125C14.2222 13.6082 13.8243 14 13.3333 14C12.8424 14 12.4444 13.6082 12.4444 13.125V7.72563C11.4087 7.36528 10.6667 6.39294 10.6667 5.25C10.6667 4.10706 11.4087 3.13472 12.4444 2.77437V0.875C12.4444 0.391751 12.8424 0 13.3333 0C13.8243 0 14.2222 0.391751 14.2222 0.875V2.77437ZM10.6667 9.625C10.6667 10.7679 9.92462 11.7403 8.88889 12.1006V13.125C8.88889 13.6082 8.49092 14 8 14C7.50908 14 7.11111 13.6082 7.11111 13.125V12.1006C6.07538 11.7403 5.33333 10.7679 5.33333 9.625C5.33333 8.48206 6.07538 7.50972 7.11111 7.14937V0.875C7.11111 0.391751 7.50908 0 8 0C8.49092 0 8.88889 0.391751 8.88889 0.875V7.14937C9.92462 7.50972 10.6667 8.48206 10.6667 9.625ZM3.55556 2.77437C4.59128 3.13472 5.33333 4.10706 5.33333 5.25C5.33333 6.39294 4.59128 7.36528 3.55556 7.72563V13.125C3.55556 13.6082 3.15759 14 2.66667 14C2.17575 14 1.77778 13.6082 1.77778 13.125V7.72563C0.742051 7.36528 0 6.39294 0 5.25C0 4.10706 0.742051 3.13472 1.77778 2.77437V0.875C1.77778 0.391751 2.17575 0 2.66667 0C3.15759 0 3.55556 0.391751 3.55556 0.875V2.77437ZM2.66667 6.125C3.15759 6.125 3.55556 5.73325 3.55556 5.25C3.55556 4.76675 3.15759 4.375 2.66667 4.375C2.17575 4.375 1.77778 4.76675 1.77778 5.25C1.77778 5.73325 2.17575 6.125 2.66667 6.125ZM13.3333 6.125C13.8243 6.125 14.2222 5.73325 14.2222 5.25C14.2222 4.76675 13.8243 4.375 13.3333 4.375C12.8424 4.375 12.4444 4.76675 12.4444 5.25C12.4444 5.73325 12.8424 6.125 13.3333 6.125ZM8 10.5C8.49092 10.5 8.88889 10.1082 8.88889 9.625C8.88889 9.14175 8.49092 8.75 8 8.75C7.50908 8.75 7.11111 9.14175 7.11111 9.625C7.11111 10.1082 7.50908 10.5 8 10.5Z"
+            fill="#FE0000"
+          />
+        </svg>
+      </button>
+      <div class="catalog-filter-wrapper" id="filter">
+        <div class="catalog-filter-block">
+          <div class="catalog-filter-block__title">Фильтры</div>
+          <div class="catalog-filter-block__close">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L8.5 8.5M16 16L8.5 8.5M8.5 8.5L16 1L1 16" stroke="black" stroke-width="2"/>
+</svg>
+
+          </div>
+          <?= do_shortcode('[woof]') ?>
+        </div>
+      </div>
+    </div>
   </div>
 <?}, 50 );
 add_action( 'woocommerce_after_shop_loop', function() {
@@ -255,6 +271,9 @@ remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_pro
 add_action( 'woocommerce_shop_loop_item_title', function() {
     echo '<p class="products-item__title">'. get_the_title() .'</p>';
 } , 10 );
+add_action( 'woocommerce_after_shop_loop_item_title', function() {
+    echo ' <a href="'. get_the_permalink( ) .'" class="product-item__btn btn mt-3">Подробнее</a>';
+} , 25 );
 
 
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
@@ -528,14 +547,12 @@ function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
     // Check products stock status
     $query_args['meta_query'][] = $woocommerce->query->stock_status_meta_query();
     // Create a new query
-    $r = new WP_Query($query_args);?>
+    $r = new WP_Query($query_args);
+    if ($r->have_posts()) :?>
     <h2 class="products__title section-title">Вы смотрели</h2>
 		<div class="row">
       <?
-      if (empty($r)) {
-        return __( 'You have not viewed any product yet!', 'rc_wc_rvp' );
-
-      }
+  
       
       while ( $r->have_posts() ) : 
         $r->the_post();     ?>
@@ -547,7 +564,7 @@ function rc_woocommerce_recently_viewed_products( $atts, $content = null ) {
       <?php endwhile; ?>
 
     </div> 
-
+    <? endif ?>
     <?php wp_reset_postdata();
 
     return '<section class="products"><div class="container">' . ob_get_clean() . '</div></section>';
@@ -618,3 +635,160 @@ if ( defined( 'YITH_WCWL' ) && ! function_exists( 'yith_wcwl_enqueue_custom_scri
   add_action( 'wp_enqueue_scripts', 'yith_wcwl_enqueue_custom_script', 20 );
 }
 
+// my-account
+add_filter( 'woocommerce_account_menu_items', 'remove_my_account_links' );
+ function remove_my_account_links( $menu_links ){ 
+  unset( $menu_links['downloads'] ); 
+  unset( $menu_links['edit-address'] ); 
+
+
+  $menu_links['dashboard'] = 'Главная';
+
+  $delivery = array( 'delivery' => 'Доставка' ); 
+ 
+	$menu_links =array_slice( $menu_links, 0, 1, true ) 
+	+ $delivery 
+	+ array_slice( $menu_links, 1, NULL, true );
+
+  $wishlist = array( 'wishlist' => 'Избранное' );
+  $menu_links = array_slice( $menu_links, 0, 3, true ) 
+	+ $wishlist 
+	+ array_slice( $menu_links, 3, NULL, true );
+
+  $promocode = array( 'promocode' => 'Скидки и промокоды' );
+  $menu_links = $menu_links + $promocode;
+
+  return $menu_links;
+} 
+
+
+add_filter( 'woocommerce_get_endpoint_url', 'hook_endpoint', 10, 4 );
+function hook_endpoint( $url, $endpoint, $value, $permalink ){
+	if( $endpoint === 'wishlist' ) {
+		// Here is the place for your custom URL, it could be external
+		$url = esc_url( YITH_WCWL()->get_wishlist_url() );
+	}
+	return $url;
+}
+
+add_action( 'init', 'add_endpoint' );
+function add_endpoint() {
+
+	add_rewrite_endpoint( 'delivery', EP_PAGES );
+	add_rewrite_endpoint( 'promocode', EP_PAGES );
+ 
+}
+
+add_action( 'woocommerce_account_delivery_endpoint', 'delivery_my_account_endpoint_content' );
+
+function delivery_my_account_endpoint_content() { ?>
+
+  <? 
+  $customer = wp_get_current_user();
+  $orderArg = array(
+      'customer_id' => $customer -> ID,
+      'limit' => -1,
+      'orderby' => 'date',
+      'order' => 'DESC',
+      );
+  $orders = wc_get_orders($orderArg);
+  ?>    
+  <? 
+  if($orders){
+    
+    $last_order_id = 	$orders[0]-> get_ID();
+    
+    $order=wc_get_order($last_order_id);
+    $delivery_address = $order->get_meta('delivery_address');
+    $delivery_time = $order->get_meta('delivery_time');  
+    $number  = $order->get_order_number();
+    $status = $order->get_status();
+    ?>
+
+    <div class="col-lg-9">
+      <div class="delivery">
+        <div class="delivery__top">
+          <div class="delivery__title">Доставка <?= $delivery_time ?>(№ <?= $number ?>)</div>
+          <div class="delivery__status"><?= wc_get_order_status_name($status) ?></div>
+        </div>
+        <div class="row">          
+          <? 
+          $order_items = $order->get_items();
+          global $post;
+          foreach( $order_items as $item_id => $item ){     
+            
+            $wc_product = $item->get_product(); 
+           ?>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <div class="products-item">
+                <? if ($wc_product -> is_on_sale()) {
+                  echo apply_filters( 'woocommerce_sale_flash', '<span class="products-item__sale">' . esc_html__( 'Sale!', 'woocommerce' ) . '</span>', $post, $wc_product );
+                } ?>
+                <span class="products-item__favorite"
+                  >
+                 <?= $item -> get_quantity() . 'шт.' ?>
+              </span>
+                <a href="<?= $wc_product -> get_permalink(); ?>" class="products-item__thumb">                  
+                  <?=  $wc_product -> get_image() ?>
+                </a>
+                <a href="<?= $wc_product -> get_permalink(); ?>" class="products-item__title"><?= $wc_product -> get_title(); ?></a>
+                <div class="products-item__price"><?= $wc_product -> get_price_html(); ?></div>
+                 <a href="<?= get_the_permalink( ) ?>" class="product-item__btn btn mt-3">Подробнее</a>
+              </div>
+            </div>
+          <? } ?>        
+        </div>
+      </div>
+    </div>
+    <? }
+  else {
+    wc_print_notice( 'Информация о ближайщих доставках отсутствует', 'notice' );
+  }
+} 
+add_action( 'woocommerce_account_promocode_endpoint', 'promocode_my_account_endpoint_content' );
+function promocode_my_account_endpoint_content() {
+    
+  $coupon_posts = get_posts( array(
+    'posts_per_page'   => -1,
+    'orderby'          => 'name',
+    'order'            => 'asc',
+    'post_type'        => 'shop_coupon',
+    'post_status'      => 'publish',
+  ) );
+
+  $current_user = wp_get_current_user();	
+  $user_email = $current_user -> user_email;
+
+  global $woocommerce;
+  $has_code = false;
+  // Push to array
+  foreach ( $coupon_posts as $coupon_post ) {
+    
+    $c = new WC_Coupon($coupon_post -> ID);					
+    
+    // print_r($c);
+    
+    $emails =$c -> get_email_restrictions();
+    $code = $c -> get_code();
+    $discount_type = $c ->get_discount_type();
+    $min_price = $c ->get_minimum_amount();
+    $percent = $c ->get_amount();
+
+    if (in_array( $user_email, $emails ) ) {
+      
+      if ($discount_type == 'percent') {
+        echo '<p class="lc-item__percent">'.$percent.'%</p>';
+      }
+      if ($min_price) { 
+      echo '<p class="lc-item__descr">При заказе от '.$min_price.' ₽</p>';
+      }
+      echo '<div class="lc-item__promocode">'. $code .'</div>';
+
+      $has_code = true;
+    } 
+
+    
+  
+  }
+ 
+}

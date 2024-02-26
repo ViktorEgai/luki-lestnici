@@ -28,7 +28,7 @@ $allowed_html = array(
 );
 ?>
 
-<p>
+<!-- <p>
 	<?php
 	printf(
 		/* translators: 1: user display name 2: logout url */
@@ -37,9 +37,9 @@ $allowed_html = array(
 		esc_url( wc_logout_url() )
 	);
 	?>
-</p>
+</p> -->
 
-<p>
+<!-- <p>
 	<?php
 	/* translators: 1: Orders URL 2: Address URL 3: Account URL. */
 	$dashboard_desc = __( 'From your account dashboard you can view your <a href="%1$s">recent orders</a>, manage your <a href="%2$s">billing address</a>, and <a href="%3$s">edit your password and account details</a>.', 'woocommerce' );
@@ -54,7 +54,7 @@ $allowed_html = array(
 		esc_url( wc_get_endpoint_url( 'edit-account' ) )
 	);
 	?>
-</p>
+</p> -->
 
 <?php
 	/**

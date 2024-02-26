@@ -112,14 +112,7 @@ jQuery(document).ready(function ($) {
 	}
 	catalogMenu();
 
-	// $(document).on("scroll", function () {
-	// 	var y = $(this).scrollTop();
-	// 	if (y > 300) {
-	// 		$(".to-top").addClass("active");
-	// 	} else if (y > 200) {
-	// 		$(".to-top").removeClass("active");
-	// 	}
-	// });
+	
 
 	// droplist
 	$(".dropdown-item__title").on("click", function () {
@@ -271,7 +264,7 @@ jQuery(document).ready(function ($) {
 		prevArrow: nextButton,
 		responsive: [
 			{
-				breakpoint: 992,
+				breakpoint: 576,
 				settings: {
 					slidesToShow: 4,
 					slidesToScroll: 1,
@@ -307,9 +300,9 @@ jQuery(document).ready(function ($) {
 		$(this).parent().next().slideToggle();
 	});
 
-	// $(".sort-btn").on("click", function () {
-	// 	$(".catalog-filter-list").toggle(400);
-	// });
+	$(".sort-btn").on("click", function () {
+		$(".catalog-filter-list").toggle(400);
+	});
 
 	// copy to clipboard
 	function copyToClipboard(element) {
@@ -355,6 +348,17 @@ jQuery(document).ready(function ($) {
 		});
 	}
 	toggleDescription();
+
+
+	// catalog-filter
+	$('.catalog-filter-btn').on('click', function() {
+		$('#filter').addClass('active');
+		$("body").addClass("overflow");
+	});
+	$('.catalog-filter-block__close').on('click', function() {
+		$('#filter').removeClass('active');
+		$("body").removeClass("overflow");
+	});
 
 	// Input mask
 	$("input[type=tel]").inputmask("+7(999)-999-99-99");

@@ -42,14 +42,16 @@
     @include font(9.8px,128%,500  )
     letter-spacing: -0.195px
   &__image
+    max-width: 400px
+    margin-left: auto
     img
       aspect-ratio: 460/505
       object-fit: contain
-      margin-left: auto
-@media screen and ( max-width: 992px )
+      // margin-left: auto
+@media screen and ( max-width: 768px )
   .about
-    &__image img
-      max-width: 300px
+    &__image
+      margin-left: 0
     &-nums
       top: auto
-      bottom: 0
+      bottom: 30px

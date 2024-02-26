@@ -124,9 +124,13 @@
     left: calc(50% - 20vw)
 
 @media screen and ( max-width: 992px )
+  .catalog-menu-wrapper
+    max-height: calc(100vh - 160px)
+    overflow-y: auto
+
   .catalog-menu-body
     padding-bottom: 30px
-    height: 400px
+    // height: 400px
   .catalog-menu-category-item-nav__item
     padding: 15px
     font-size: 14px

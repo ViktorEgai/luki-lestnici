@@ -109,20 +109,8 @@
 						</svg>
 						Каталог
 					</button>
-					<form action="" class="header-center__search d-none d-lg-flex">
-						<input type="search" placeholder="Я ищу..." />
-						<button>
-							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									d="M15 15L11.6167 11.6166M13.4444 7.22226C13.4444 10.6587 10.6586 13.4445 7.22221 13.4445C3.78578 13.4445 1 10.6587 1 7.22226C1 3.7858 3.78578 1 7.22221 1C10.6586 1 13.4444 3.7858 13.4444 7.22226Z"
-									stroke="white"
-									stroke-width="1.3"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								/>
-							</svg>
-						</button>
-					</form>
+					<div class="d-none d-lg-flex header-center__search "><?php echo do_shortcode('[fibosearch]'); ?></div>
+					
 					<div class="header-center-buttons">
 
 						<a href="<?= wc_get_cart_url() ?>" class="header-center-buttons__item header-center-cart"
@@ -142,8 +130,8 @@
 						</a>
 						<?= do_shortcode( '[yith_wcwl_items_count]' ) ?>
 						
-					
-						<a href="#sign-in" data-fancybox class="header-center-buttons__item header-center-login"
+						<? //if (is_user_logged_in()) : ?>
+						<a href="<?php echo get_permalink( wc_get_page_id( 'myaccount' ) ); ?>" class="header-center-buttons__item header-center-login"
 							><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
 									d="M15.6186 11.1284C17.1543 10.0084 18.1544 8.19581 18.1544 6.15384C18.1544 2.76061 15.3937 0 12.0005 0C8.60727 0 5.84666 2.76061 5.84666 6.15384C5.84666 8.19581 6.84665 10.0084 8.38237 11.1284C4.56487 12.5892 1.84668 16.2905 1.84668 20.6154C1.84668 22.4817 3.36501 24 5.23129 24H18.7697C20.636 24 22.1543 22.4817 22.1543 20.6154C22.1543 16.2905 19.4361 12.5892 15.6186 11.1284ZM7.69284 6.15384C7.69284 3.77859 9.62526 1.84617 12.0005 1.84617C14.3758 1.84617 16.3082 3.77859 16.3082 6.15384C16.3082 8.52909 14.3758 10.4616 12.0005 10.4616C9.62526 10.4616 7.69284 8.52909 7.69284 6.15384ZM18.7697 22.1538H5.23129C4.38299 22.1538 3.69285 21.4637 3.69285 20.6153C3.69285 16.0344 7.4196 12.3076 12.0006 12.3076C16.5815 12.3076 20.3083 16.0344 20.3083 20.6153C20.3082 21.4637 19.6181 22.1538 18.7697 22.1538Z"
@@ -151,7 +139,17 @@
 								/>
 							</svg>
 						</a>
-						<button class="header-menu-btn d-flex d-lg-none" data-src="#mobile-menu" data-fancybox>
+							<? //else: ?>
+						<!-- <a href="#sign-in" data-fancybox class="header-center-buttons__item header-center-login"
+							><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path
+									d="M15.6186 11.1284C17.1543 10.0084 18.1544 8.19581 18.1544 6.15384C18.1544 2.76061 15.3937 0 12.0005 0C8.60727 0 5.84666 2.76061 5.84666 6.15384C5.84666 8.19581 6.84665 10.0084 8.38237 11.1284C4.56487 12.5892 1.84668 16.2905 1.84668 20.6154C1.84668 22.4817 3.36501 24 5.23129 24H18.7697C20.636 24 22.1543 22.4817 22.1543 20.6154C22.1543 16.2905 19.4361 12.5892 15.6186 11.1284ZM7.69284 6.15384C7.69284 3.77859 9.62526 1.84617 12.0005 1.84617C14.3758 1.84617 16.3082 3.77859 16.3082 6.15384C16.3082 8.52909 14.3758 10.4616 12.0005 10.4616C9.62526 10.4616 7.69284 8.52909 7.69284 6.15384ZM18.7697 22.1538H5.23129C4.38299 22.1538 3.69285 21.4637 3.69285 20.6153C3.69285 16.0344 7.4196 12.3076 12.0006 12.3076C16.5815 12.3076 20.3083 16.0344 20.3083 20.6153C20.3082 21.4637 19.6181 22.1538 18.7697 22.1538Z"
+									fill="black"
+								/>
+							</svg>
+						</a> -->
+						<? //endif ?>
+						<button class="header-menu-btn d-flex d-lg-none" data-src="#mobile-menu" data-fancybox data-options='{"touch" : false}'>
 							<svg width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<rect width="26" height="2.78571" rx="1.39286" fill="#000" />
 								<rect y="7.42859" width="26" height="2.78571" rx="1.39286" fill="#000" />
@@ -174,20 +172,9 @@
 			<a href="<? bloginfo('url') ?>" class="mobile-menu__logo">
 				<img src="<?= $header_logo['url']?>" alt="Логотип <? bloginfo('name') ?>" />
 			</a>
-			<form action="" class="header-center__search">
-				<input type="search" placeholder="Я ищу..." />
-				<button>
-					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path
-							d="M15 15L11.6167 11.6166M13.4444 7.22226C13.4444 10.6587 10.6586 13.4445 7.22221 13.4445C3.78578 13.4445 1 10.6587 1 7.22226C1 3.7858 3.78578 1 7.22221 1C10.6586 1 13.4444 3.7858 13.4444 7.22226Z"
-							stroke="white"
-							stroke-width="1.3"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						/>
-					</svg>
-				</button>
-			</form>
+			<div class="header-center__search">
+				<?php echo do_shortcode('[fibosearch]'); ?>
+							</div>
 			<? wp_nav_menu(['theme_location' => 'header-menu']) ?>
 		</div>
 	</div>
