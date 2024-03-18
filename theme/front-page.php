@@ -119,14 +119,22 @@
     </div>
   </section>
   <? if ( get_field('reviews_visibility') ) : 
-    $reviews_title = get_field('reviews_title');
-    
-    ?>
+    $reviews_title = get_field('reviews_title');    
+  ?>
   <section class="reviews">
     <div class="container">
-      <h2 class="reviews__title section-title"><?= $reviews_title ?></h2>
+     <div class="row mb-5">
+       <div class="col-lg-6"><h2 class="reviews__title section-title"><?= $reviews_title ?></h2></div>
+       <div class="col-lg-6 d-none d-lg-flex justify-content-end">
+        <a href="<?= get_permalink( get_page_by_path( 'reviews' )) ?>" class="reviews__btn btn">Смотреть все</a>
+       </div>
+      </div>
 
       <? get_template_part('template-parts/blocks/reviews-slider') ?>
+
+      <div class="d-lg-none m-3 ">
+      <a href="<?= get_permalink( get_page_by_path( 'reviews' )) ?>" class="reviews__btn btn m-auto ">Смотреть все</a>
+      </div>
     </div>
   </section>
   <? endif ?>
@@ -209,7 +217,7 @@
             </svg>
           </div>
           <? $thumb_id = get_term_meta( $cat->term_id, 'thumbnail_id', true );
-          $cat_image = wp_get_attachment_url(  $thumb_id ); ?>
+          $cat_image = wp_get_attachment_image_url(  $thumb_id, 'full' ); ?>
           <img src="<?= $cat_image ?>" alt="" class="category-grid-item__image" />
         </a>
        <? endforeach ?>

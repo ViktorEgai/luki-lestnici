@@ -24,7 +24,7 @@ get_header();
 
 					<div class="col-lg-4 col-sm-6 mb-4">
 						<a href="<? the_permalink() ?>" class="news-item">
-							<? the_post_thumbnail( 'medium', ['class'=> 'news-item__thumb'] ) ?>
+							<? the_post_thumbnail( 'medium_large', ['class'=> 'news-item__thumb'] ) ?>
 							<p class="news-item__title"><? the_title() ?></p>
 							<div class="news-item__excerpt">
 								<? the_excerpt() ?>

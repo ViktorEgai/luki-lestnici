@@ -12,7 +12,7 @@
   foreach($categories as $term) {?>
 
   <div class="catalog-sidebar-block">
-    <h3 class="catalog-sidebar-block__title"><?= $term -> name ?></h3>
+    <h3 class="catalog-sidebar-block__title"><a href="<?= get_term_link( $term) ?>"><?= $term -> name ?><a ></h3>
     <ul class="catalog-sidebar-list">
       <? 
       $child_args = [

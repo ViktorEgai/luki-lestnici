@@ -18,29 +18,44 @@
 
   position: relative
 
-  overflow: hidden
+  // overflow: hidden
 
   cursor: pointer
 
   color: #fff
 
   width: 100%
-
-  box-shadow: 0 0 40px 40px $btn-color inset, 0 0 0 0 $btn-color
-  transition: all 150ms ease-in-out
+  background-color: $btn-color
+  transition: all .4s
   path
     transition: all 150ms ease-in-out
+  &:after
+    content: ""
+    display: inline-block
+    height: 100%
+    width: 100%
+    border-radius: 8px
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    transition: all .4s
 
+    background-color: $btn-color
   &:disabled
     opacity: 0.4
   &--red
-    box-shadow: 0 0 40px 40px $main-color inset, 0 0 0 0 $main-color
+    background-color: $main-color
     border: 1px solid $main-color
+    &::after
+      background-color: $main-color
   &--transparent
-    background-color: transparent
+    background-color: $body-bg-color
     color: $btn-color
     border: 1px solid $btn-color
     box-shadow: none
+    &::after
+      background-color: $body-bg-color
     &.btn--red
       color: $main-color
       border: 1px solid $main-color
@@ -48,17 +63,25 @@
   &--grey
     background-color: #F3F4F5
     color: #000
-@media screen and ( min-width: 992px )
+    &::after
+      background-color: #f3f4f5
+@media (hover: hover )
   .btn:not(:disabled):hover
-    box-shadow: 0 0 10px 0 $btn-color inset, 0 0 10px 4px $btn-color
-    color: $btn-color
-    path
-      fill: $btn-color
-  .btn--red:not(:disabled):hover
-    box-shadow: 0 0 10px 0 $main-color inset, 0 0 10px 4px $main-color
-    color: $main-color
-    path
-      fill: $main-color
+    transform: translateY(-3px)
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
+    // path
+      // fill: $btn-color
+    &:after
+      transform: scaleX(1.2) scaleY(1.4)
+      opacity: 0
+      visibility: hidden
+      transition: all .4s
+
+  // .btn--red:not(:disabled):hover
+  //   box-shadow: 0 0 10px 0 $main-color inset, 0 0 10px 4px $main-color
+  //   color: $main-color
+  //   path
+  //     fill: $main-color
 @media screen and ( max-width: 992px )
   .btn
     font-size: 14px

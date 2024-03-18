@@ -17,7 +17,7 @@
               </div>
               <div class="col-lg-8 order-1 order-lg-2">
                   <div class="page-top__image">
-                      <? the_post_thumbnail('medium_large') ?>
+                      <? the_post_thumbnail('large') ?>
                   </div>
               </div>
           </div>

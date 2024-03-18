@@ -6,13 +6,9 @@
     <div class="container">
       <div class="contacts-top-wrapper">
         <div class="d-flex justify-content-between align-item-center"><h1 class="contacts__title small-title"><? the_title() ?></h1>
-      <a href="#popup" class="contacts-top__btn" data-fancybox>Написать нам</a>
+        <a href="#popup" class="contacts-top__btn" data-fancybox>Написать нам</a>
       </div>
-        <!-- <div class="contacts-top-nav">
-          <a href="#" class="contacts-top-nav__item active" data-index="0"> Контакты в Москве </a>
-          <a href="#" class="contacts-top-nav__item" data-index="1"> Контакты в Санкт-Петербурге </a>
-          <a href="#popup" class="contacts-top__btn" data-fancybox>Написать нам</a>
-        </div> -->
+       
         <? 
         $page_top_title = get_field('page_top_title');
         $page_top_text = get_field('page_top_text');
@@ -23,7 +19,7 @@
         <div class="page-top">
           <div class="row">
             <div class="col-xxl-4 col-lg-5 mb-4 mb-lg-0 order-2 order-lg-1">
-              <div class="page-top__info justify-content-center pe-0">
+              <div class="page-top__info justify-content-center pe-lg-0">
                 <? if ($page_top_title): ?>
                 <h2 class="page-top__title" style="max-width: 100%"><?= $page_top_title ?></h2>
                 <? endif ?>
@@ -76,7 +72,7 @@
       </div>
     </div>
   </div>
-          <? endif ?>
+  <? endif ?>
 
   <? if (have_rows('blocks')) : ?>
   <div class="contacts-block">
@@ -134,5 +130,7 @@
       </div>
     </div>
   <? endif ?>
+
+  <? get_template_part('template-parts/blocks/contacts') ?>
 </main>
 <? get_footer() ?>
