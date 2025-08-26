@@ -1,6 +1,6 @@
 <div class="popup" id="popup">
   <div class="popup-title small-title">Заказать звонок</div>
-  <form class="popup__form form">
+  <!-- <form class="popup__form form">
     <div class="form__field">
       <div class="form__label">Имя<span>*</span></div>
       <input type="text" class="form__input" placeholder="Имя" />
@@ -13,8 +13,8 @@
       Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c <a href="#">политикой конфиденциальности</a>
     </div>
     <button class="form__btn btn">Заказать звонок</button>
-  </form>
-  
+  </form> -->
+  <?= do_shortcode('[contact-form-7 id="3d71c08" title="Форма Контакты" html_class="popup__form form"]') ?>
 </div>
 <div class="popup" id="sign-in">
   <div class="popup-title small-title">Вход в личный кабинет</div>

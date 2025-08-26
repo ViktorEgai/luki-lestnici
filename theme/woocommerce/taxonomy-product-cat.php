@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Template for displaying products in a product category. Simply includes the archive template
  *
@@ -15,8 +16,23 @@
  * @version     4.7.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
+if (! defined('ABSPATH')) {
 	exit; // Exit if accessed directly.
 }
+if (get_queried_object_id() == 792 ||  get_queried_object_id() == 793) {
 
-wc_get_template( 'archive-product.php' );
+	get_header();
+
+?>
+	<main class="main">
+		<? get_template_part('template-parts/breadcrumbs') ?>
+
+		<? get_template_part('template-parts/blocks/content', 'page-tax') ?>
+	</main>
+
+<?php
+
+	get_footer();
+} else {
+	wc_get_template('archive-product.php');
+}

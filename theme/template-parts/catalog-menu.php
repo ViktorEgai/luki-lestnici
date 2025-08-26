@@ -78,21 +78,64 @@ $categories = get_terms( $args );
                     
                   ];
                   $ter_child_categories = get_terms( $ter_child_args );
-
+                
                 ?>
                 <div class="catalog-menu-category-item">
-                  <div class="catalog-menu-category-item-nav">
-                    <? $data_index = 0;
-                    foreach ($ter_child_categories as $term) { 
-                      echo '<button class="catalog-menu-category-item-nav__item" data-index="'.$data_index.'">'. $term -> name.'</button>';
-                    $data_index++;    
-                   } ?>
+                  <? if (  !empty( $ter_child_categories ) ) : ?>
+                    <div class="catalog-menu-category-item-nav">
+                      <? $data_index = 0;
+                        
+                      foreach ($ter_child_categories as $term) { 
+                        echo '<button class="catalog-menu-category-item-nav__item" data-index="'.$data_index.'">'. $term -> name.'</button>';
+                      $data_index++;    
+                    } ?>
+                      
+                      
+                    </div>
+                    <div class="catalog-menu-category-item-body">
+                      <?
+                      foreach ($ter_child_categories as $term) {  ?>
+                        <ul class="catalog-menu-category-item-list row">
+                          <? 
+                          // параметры по умолчанию
+                          $products = get_posts( array(
+                            'numberposts' => -1,                          
+                            'post_type'   => 'product',
+                            'suppress_filters' => true, 
+                            'tax_query' => array(
+                              array(
+                                'taxonomy' => 'product_cat',
+                                'field'    => 'slug',
+                                'terms'    => $term -> slug
+                              )
+                            )
+                          ) );
+
+                          global $post;
+
+                          foreach( $products as $post ){
+                            setup_postdata( $post );?>
+                          <li class="catalog-menu-category-item-list__item col-lg-4 mb-3 col-sm-6">
+                            <a href="<? the_permalink() ?>">
+                              <?= woocommerce_get_product_thumbnail( ); ?>
+                              <span><? the_title() ?></span>
+                            </a>
+                          </li>
+
+                          <? }
+
+                          wp_reset_postdata(); // сброс
+                          ?>
+                          
+                          
+                        </ul>
+                    <? } ?>
                     
                     
-                  </div>
-                  <div class="catalog-menu-category-item-body">
-                    <?
-                    foreach ($ter_child_categories as $term) {  ?>
+                    </div>
+                  <? else : ?>
+                    <div class="catalog-menu-category-item-body">
+                      <p class="catalog-menu-category-item-nav__item mb-3 "><?= $term -> name ?></p>
                       <ul class="catalog-menu-category-item-list row">
                         <? 
                         // параметры по умолчанию
@@ -127,10 +170,11 @@ $categories = get_terms( $args );
                         
                         
                       </ul>
-                   <? } ?>
+                   
                    
                    
                   </div>
+                  <? endif ?>
                 </div>
               <? } ?>  
              

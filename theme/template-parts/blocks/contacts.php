@@ -5,20 +5,8 @@
     </div>
     <div class="contacts-info">
       <h2 class="contacts__title section-title">Контакты</h2>
-      <form class="contacts__form form">
-        <div class="form__field">
-          <div class="form__label">Имя<span>*</span></div>
-          <input type="text" class="form__input" placeholder="Имя" />
-        </div>
-        <div class="form__field">
-          <div class="form__label">Телефон <span>*</span></div>
-          <input type="tel" class="form__input" placeholder="+7 (_ _ _) - _ _ _ - _ _ - _ _" />
-        </div>
-        <div class="form-acceptance">
-          Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c <a href="#">политикой конфиденциальности</a>
-        </div>
-        <button class="form__btn btn">Заказать звонок</button>
-      </form>
+     
+      <?= do_shortcode('[contact-form-7 id="3d71c08" title="Форма Контакты" html_class="contacts__form form"]') ?>
     </div>
   </div>
 </section>

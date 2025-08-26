@@ -323,6 +323,15 @@ jQuery(document).ready(function ($) {
 			timer: 1000,
 		});
 	});
+	$("form").on("wpcf7mailsent ", function () {
+		Swal.fire({
+			position: "bottom-end",
+			icon: "success",
+			text: "Спасибо за заявку",
+			showConfirmButton: false,
+			timer: 3000,
+		});
+	});
 
 	function toggleDescription() {
 		$(".about-product-block").each(function () {
